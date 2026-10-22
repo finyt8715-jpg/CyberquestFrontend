@@ -1,5 +1,5 @@
 <!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><title>CyberQuest | Cyber awareness game</title><meta name="description" content="CyberQuest is a five-level cyber awareness game for employees."><meta name="theme-color" content="#121318"><meta name="color-scheme" content="dark">
-<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=JetBrains+Mono:wght@400;700&family=Space+Grotesk:wght@500;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Rajdhani:wght@500;600;700&family=Roboto:wght@400;500;700&family=JetBrains+Mono:wght@400;700&family=Press+Start+2P&family=VT323&display=swap" rel="stylesheet">
 <style>
 :root{--bg:#121318;--sur:#181920;--bev:#22242d;--rule:#323542;--ink:#0b0c0e;--amb:#ffb800;--mint:#10b981;--red:#ef4444;--cream:#f8fafc;--mut:#94a3b8;--hl:#3d4152;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
 html{scroll-padding-top:env(safe-area-inset-top,0px)}
@@ -84,10 +84,32 @@ table{width:100%;border-collapse:collapse}td,th{padding:10px 12px;text-align:lef
 .tr{max-height:300px;min-height:140px;overflow:auto;margin:12px 0;display:flex;flex-direction:column;gap:8px}
 .bb{padding:8px 10px;border:1px solid var(--rule);background:var(--sur);max-width:92%;font-size:12.5px;line-height:19px}.bb.me{align-self:flex-end;background:#3a2c00;border-color:var(--amb)}.bb.fb2{align-self:flex-start;font-size:11px;line-height:16px;background:var(--ink)}
 .bb u{text-decoration:underline dotted var(--mut);cursor:pointer}.bb u.fl{text-decoration:none;background:#4a1d1d;color:#fecaca}.bb u.fl.gd{background:#064e3b;color:#a7f3d0}
+/* Retro arcade typography: pixel titles, terminal controls, readable long-form text. */
+:root{--pixel:'Press Start 2P',monospace;--terminal:'VT323',monospace}
+h1,h2,h3{font-family:var(--pixel);line-height:1.7;overflow-wrap:anywhere}
+h1{font-size:clamp(18px,2.5vw,28px)}h2{font-size:15px}h3{font-size:12px;letter-spacing:0}
+.brand{font:12px/1.8 var(--pixel);letter-spacing:0;text-shadow:2px 2px #684c12}
+.lbl{font:20px/1.15 var(--terminal);letter-spacing:.04em}
+.btn{font:22px/1.1 var(--terminal);letter-spacing:.04em}
+nav button,.aud button{font:20px/1.1 var(--terminal);letter-spacing:.03em}
+.chip{font:18px/1.2 var(--terminal);letter-spacing:.03em}
+.big{font:28px/1.5 var(--terminal)}.node{font:18px/1.4 var(--pixel)}
+.you{font:16px/1.2 var(--terminal)}#toast{font:20px/1.2 var(--terminal);max-width:calc(100vw - 32px)}
+.cart-h{gap:10px;flex-wrap:wrap}
+.gm{border:1px solid #dce1e8;border-radius:16px;overflow:hidden;box-shadow:0 4px 16px #0003}
+.gm .gm-icon{border:0;background:none;padding:0;cursor:pointer}.gm .gm-detail{border:0;background:none;padding:0;font:12px/20px Roboto,Arial,sans-serif;text-align:left}
+.gm .mail-link{border:0;background:none;padding:0;color:#0b57d0;text-decoration:underline;cursor:pointer;font:inherit;text-align:left;overflow-wrap:anywhere}
+.gm .btn{font:500 14px/20px Roboto,Arial,sans-serif;text-transform:none;letter-spacing:0;border-radius:18px;box-shadow:none;background:#c2e7ff;border-color:#c2e7ff;color:#001d35}
+.gm .mail-feedback{margin-left:56px;background:#e6f4ea;color:#174d2b;border-left:3px solid #188038;border-radius:4px;font:14px/22px Roboto,Arial,sans-serif}
+.gm .mail-feedback.wrong{background:#fce8e6;border-color:#d93025;color:#8c1d18}.gm .mint{color:#137333}.gm .red{color:#b3261e}
+.gm .det{overflow-wrap:anywhere}.gm .ph{min-width:0}.gm .hd small{overflow-wrap:anywhere}.gm .bd{overflow-wrap:anywhere}
+.gm .pl{box-sizing:border-box}.gm .subj{overflow-wrap:anywhere}.gm .logo{flex-shrink:0}.gm .upg b{display:none}
+.mail-debrief{margin-top:18px;padding:22px;border:1px solid #354b42;background:#13241e}.mail-debrief p,.mail-debrief li{line-height:1.8}.mail-debrief summary{cursor:pointer;padding:10px 0;color:#ffe091}
+@media(max-width:900px){.gm .mail-feedback{margin-left:0}.gm .tabs{overflow:hidden}.gm .tab{padding:0 10px;gap:8px;font-size:12px}.gm .upg .ib{display:none}.gm .hd{flex-wrap:wrap}.gm .ev{padding:0 16px 24px}.gm .sn{width:110px}.gm .ms{min-width:120px}.gm .dt{margin-left:auto}.gm .rw{row-gap:5px;padding-top:9px;padding-bottom:9px}nav{max-width:100%}}
 </style></head><body>
 <a class="skip" href="#app">Skip to content</a>
-<header><div class="brand"><i></i>CYBERQUEST</div><nav id="nav" aria-label="Main"></nav><div class="aud" id="aud"></div><div class="me" id="me"></div></header>
-<div id="toast" role="status" aria-live="polite"></div><div id="err" role="alert" hidden><b>Something went wrong.</b> Your progress is saved. <button class="btn" id="rl">Reload</button></div><noscript><p style="padding:20px">CyberQuest needs JavaScript to run.</p></noscript><main id="app" tabindex="-1"></main>
+<header class="site-bar"><div id="player-avatar"></div><div class="brand"><i></i>CYBERQUEST</div><nav id="nav" aria-label="Main"></nav><div class="aud" id="aud"></div><div class="me" id="me"></div></header>
+<div id="toast" role="status" aria-live="polite"></div><div id="err" role="alert" hidden><b>Something went wrong.</b> Your progress is saved. <button class="btn" id="rl">Reload</button></div><noscript><p style="padding:20px">CyberQuest needs JavaScript to run.</p></noscript><main id="app" tabindex="-1"></main><div id="bottom-dock" class="bottom-dock" hidden></div>
 <script>
 const $=s=>document.querySelector(s),fmt=n=>n.toLocaleString('en-US');
 const SERVER=!!window.CQ_SERVER,STATIC=!!window.CQ_STATIC;
@@ -123,54 +145,72 @@ document.addEventListener('click',e=>{if(e.target.closest('button,[role=button],
 const ADMIN=()=>{if(SERVER)return!!S.admin;if(STATIC&&!window.CQ_DEMO)return false;try{return /[?&]admin(=|&|$)/.test(location.search)||localStorage.getItem('cq-admin')=='1'}catch(e){return false}};
 /* ---------- persistence (progress is saved on this device until the backend exists) ---------- */
 const KEY='cyberquest.v1';
-function save(){try{localStorage.setItem(KEY,JSON.stringify(SERVER?{fx:SFX.s}:{name:S.name,best:S.best,done:S.done,claimed:S.claimed,cases:S.cases,fx:SFX.s}))}catch(e){}}
-function load(){try{const d=JSON.parse(localStorage.getItem(KEY)||'null');if(!d)return;S.name=String(d.name||'').slice(0,40);
- S.best={};for(const k in (d.best||{}))if(+k>=1&&+k<=5&&isFinite(d.best[k]))S.best[k]=Math.max(0,+d.best[k]);
- S.done=Array.isArray(d.done)?d.done.filter(n=>n>=1&&n<=5):[];S.claimed=d.claimed&&typeof d.claimed=='object'?d.claimed:{};S.cases=d.cases&&typeof d.cases=='object'?d.cases:{};
+const BASICS_VERSION=1;
+const BASICS_LIMITS={quiz:8,match:6,sort:6};
+function cleanBasics(value){
+ const result={version:BASICS_VERSION,quiz:[],match:[],sort:[]};
+ if(!value||value.version!==BASICS_VERSION)return result;
+ for(const kind of Object.keys(BASICS_LIMITS)){
+  if(!Array.isArray(value[kind]))continue;
+  result[kind]=[...new Set(value[kind].filter(n=>Number.isInteger(n)&&n>=0&&n<BASICS_LIMITS[kind]))].sort((a,b)=>a-b)
+ }
+ return result
+}
+const basicsUserKey=id=>'cyberquest.basics.v1.'+String(id);
+const savedLevelCount=()=>typeof LV==='undefined'?5:LV.length;
+function save(){try{localStorage.setItem(KEY,JSON.stringify(SERVER?{fx:SFX.s}:{missionOrder:5,name:S.name,best:S.best,done:S.done,claimed:S.claimed,cases:S.cases,photo:S.photo,basics:cleanBasics(S.basics),fx:SFX.s}));if(SERVER&&S.user&&S.user.id){localStorage.setItem('cyberquest.profile.'+S.user.id,S.photo||'');localStorage.setItem(basicsUserKey(S.user.id),JSON.stringify(cleanBasics(S.basics)))}return true}catch(e){return false}}
+function load(){try{const d=JSON.parse(localStorage.getItem(KEY)||'null');if(!d)return;S.name=String(d.name||'').slice(0,40);S.photo=profilePhotoValid(d.photo)?d.photo:'';
+ if(!SERVER&&d.missionOrder!==2&&d.missionOrder!==3&&d.missionOrder!==4&&d.missionOrder!==5){const remap=n=>+n===5?1:+n+1;d.best=Object.fromEntries(Object.entries(d.best||{}).filter(([k])=>+k>=1&&+k<=5).map(([k,v])=>[remap(k),v]));if(Array.isArray(d.done))d.done=d.done.filter(n=>n>=1&&n<=5).map(remap)}
+ if(!SERVER&&d.missionOrder!==3&&d.missionOrder!==4&&d.missionOrder!==5){const remap=n=>({1:2,2:3,3:1,4:4,5:5})[+n];d.best=Object.fromEntries(Object.entries(d.best||{}).filter(([k])=>remap(k)).map(([k,v])=>[remap(k),v]));if(Array.isArray(d.done))d.done=d.done.filter(n=>remap(n)).map(remap)}
+ if(!SERVER&&d.missionOrder!==4&&d.missionOrder!==5){const remap=n=>({1:2,2:1,3:3,4:4,5:5})[+n];d.best=Object.fromEntries(Object.entries(d.best||{}).filter(([k])=>remap(k)).map(([k,v])=>[remap(k),v]));if(Array.isArray(d.done))d.done=d.done.filter(n=>remap(n)).map(remap)}
+ if(!SERVER&&d.missionOrder!==5){const remap=n=>({1:1,2:3,3:2,4:4,5:5})[+n];d.best=Object.fromEntries(Object.entries(d.best||{}).filter(([k])=>remap(k)).map(([k,v])=>[remap(k),v]));if(Array.isArray(d.done))d.done=d.done.filter(n=>remap(n)).map(remap)}
+ S.best={};for(const k in (d.best||{}))if(+k>=1&&+k<=savedLevelCount()&&isFinite(d.best[k]))S.best[k]=Math.max(0,+d.best[k]);
+ S.done=Array.isArray(d.done)?d.done.filter(n=>Number.isInteger(n)&&n>=1&&n<=savedLevelCount()):[];S.claimed=d.claimed&&typeof d.claimed=='object'?d.claimed:{};S.cases=d.cases&&typeof d.cases=='object'?d.cases:{};if(!SERVER)S.basics=cleanBasics(d.basics);
  if(d.fx){S.fxLoaded=1;SFX.s.sfx=d.fx.sfx!==false;SFX.s.music=d.fx.music!==false}}catch(e){}}
 /* Backend adapter (phase 2): replace save()/load() and these stubs with real calls
    POST /api/progress, GET /api/leaderboard?day=today, POST /api/rewards/claim. Scores must be validated server-side. */
 
-const S={name:'',best:{},base:0,cases:{},claimed:{},score:0,done:[],view:'dash',sel:1,cur:1,lp:0,combo:0,assign:{1:'phish',2:'shoot',3:'desk',4:'voice',5:'sorter'}};
+const S={name:'',photo:'',best:{},base:0,cases:{},claimed:{},basics:{version:1,quiz:[],match:[],sort:[]},score:0,done:[],view:'games',sel:1,cur:1,lp:0,combo:0,menuOpen:false,lastResult:null,assign:{1:'sorter',2:'phish',3:'shoot',4:'desk',5:'voice'}};
+const EXTRA_LEVELS=/*__EXTRA_LEVELS__*/[];
+const ATTACK_BRIEFS=[
+ {kind:'EMAIL / FAKE LOGIN',icon:'✉',title:'The stolen sign-in',lesson:'Phishing copies a familiar email or login screen to steal your password. The sender and the final website address matter more than the logo.',message:'IT Helpdesk: “Your mailbox closes in 30 minutes. Sign in at innovatiview-login.co to keep access.”',question:'What is your move?',choices:['Open the link and sign in before the deadline','Open the company portal yourself and report the email','Reply and ask the sender if it is real'],correct:1,clue:'The look-alike domain and 30-minute threat are the trap. Visit the real portal directly.'},
+ {kind:'SPEAR PHISHING',icon:'◎',title:'A trap with your name on it',lesson:'Spear phishing uses your name, role or a real project to feel personal. Specific details can be researched or stolen; they do not prove the sender is trusted.',message:'“Hi, your Atlas project report is ready. Please open the shared file and sign in again.” The sender is a name you know, but the address is external.',question:'How do you check it?',choices:['Sign in because the project name is correct','Forward the link to your project team','Ask the colleague through a known work channel before opening it'],correct:2,clue:'A real project name is bait. Confirm with the person through a trusted channel.'},
+ {kind:'EXECUTIVE / BEC',icon:'♛',title:'The boss rush',lesson:'Attackers impersonate a CEO or director to redirect payments, buy gift cards or change bank details. This is business email compromise (BEC). Urgency and secrecy are pressure tactics.',message:'Director: “I am in meetings. Pay this supplier to the NEW bank account today. Keep it between us.”',question:'What protects the company?',choices:['Call the director or finance on a number you already know','Pay now, then verify afterward','Reply to the same message for confirmation'],correct:0,clue:'Never change payment details from one message. Verify independently with an approved contact.'},
+ {kind:'SMISHING',icon:'▣',title:'The text-message lure',lesson:'Smishing is phishing by SMS or chat. Short links and delivery or account warnings can lead to fake sites or apps.',message:'SMS: “Your work delivery is on hold. Update your address and company login at iv-delivery.help/track.”',question:'What do you do?',choices:['Tap the short link to see the package','Send the text to a colleague to test it','Check the delivery in the approved service and report the text'],correct:2,clue:'Use the service you already trust; do not enter work credentials from a text link.'},
+ {kind:'VISHING',icon:'◉',title:'The voice on the line',lesson:'Vishing is phishing by phone. Caller ID can be spoofed. Real support staff do not need your password, one-time code or MFA approval.',message:'Caller: “IT security here. Read me the six-digit code so I can stop an account lockout.”',question:'What is the safe reply?',choices:['Read the code because it is IT','Hang up, report it, and call IT using the known number','Approve the MFA prompt instead'],correct:1,clue:'Never share a code or approve an unexpected prompt, even when the caller sounds official.'},
+ {kind:'QR / URGENCY',icon:'▦',title:'The hidden destination',lesson:'QR codes can hide a fake sign-in address. A poster or document saying “scan now or lose access” is still an unverified link.',message:'A QR sticker near the office printer says: “Mandatory security update. Scan and log in before 5 PM.”',question:'What should you do?',choices:['Scan it because it is inside the office','Ask everyone on your team to scan it','Use the official IT portal and report the suspicious sticker'],correct:2,clue:'Physical placement does not make a QR code safe. Check through the official portal.'}
+];
 const LV=[
-{n:1,name:'Phish or legit',blurb:'Sort a Gmail-style inbox. Spot the fake emails before they spot you.',q:[
-['Which sender address belongs to Innovatiview?',['hr@innovatiview.com','hr@innovatiview.co','hr@innovatlview.com','hr@innovatiview-hr.net'],0,'Only the exact domain innovatiview.com is ours. Look-alikes swap letters or the ending.'],
-['A message says your password expires in 1 hour and links to a login page. First move?',['Click and log in quickly','Open the official portal yourself and report the email','Reply asking if it is real','Forward it to your team'],1,'Never use the link. Go to the real portal directly and report the message.'],
-['Your CEO emails from a Gmail address asking for gift cards. What now?',['Buy them, it is urgent','Ignore it silently','Confirm by phone or chat, then report it','Reply with your phone number'],2,'Urgency plus an outside address is a classic impersonation. Verify on a second channel.']]},
-{n:2,name:'Firewall defender',blurb:'Arcade shooter. Blast weak passwords, malware and phishing links. Let the safe stuff through.',q:[['Which password is strongest?',['Innovati@2026','P@ssw0rd!','correct-horse-lamp-orbit-47','Alex1234'],2,'Long passphrases beat short clever ones.'],['What does multi-factor authentication (MFA) add?',['A second proof of identity beyond your password','Faster logins','A longer password','Nothing important'],0,'Even if a password leaks, the attacker still needs your second factor.']]},
-{n:3,name:'Desk inspector',blurb:'Four case files: a cubicle, the reception desk, a meeting room and a home office. Close every case to finish the level.',q:[['You find an unlabeled USB drive. What do you do?',['Plug it in to find the owner','Hand it to IT security','Take it home','Leave it on a desk'],1,'Unknown drives can carry malware. IT can inspect them safely.'],['Someone follows you through a secure door without using a badge. You…',['Hold the door, it is polite','Politely challenge them and report it to security','Ignore it','Lend them your badge'],1,'Tailgating defeats door security. Challenge and report.']]},
-{n:4,name:'Voice trap',blurb:'Take four phone calls. Spot the scammers, verify the genuine caller, and never give away a code.',q:[['A caller says they are from IT and asks for your one-time code. What do you do?',['Read it out, they are IT','Refuse, hang up and report it','Read half of it','Ask them to email you first'],1,'IT will never ask for your OTP. Hang up and report it.'],['Caller ID shows your bank’s real number, but the caller asks for your PIN. What do you do?',['Trust it, the number matches','Give the PIN and change it later','Hang up and call the number on your card','Ask for their employee ID and continue'],2,'Caller ID can be spoofed. Always call back on a number you trust.']]},
-{n:5,name:'Data vault',blurb:'Files roll in on a conveyor belt. Sort each one into Public, Internal or Confidential before time runs out.',q:[['Can you send customer data to your personal email to work from home?',['Yes, if you delete it later','Only on weekends','No, use approved company tools','Yes, with a password in the subject'],2,'Company data stays in approved company systems.'],['A colleague you do not know chats you asking for the customer list for an urgent audit. What do you do first?',['Send it, audits are important','Verify who they are and whether they are authorised','Send half of it','Post it in the group chat'],1,'Confirm identity and need-to-know before sharing any confidential data.']]}];
+{n:1,name:'Data sorter',blurb:'Take your seat at the Innovatiview desk. Read each incoming file and place it in the Public, Internal or Confidential tray.',q:[['Can you send customer data to your personal email to work from home?',['Yes, if you delete it later','Only on weekends','No, use approved company tools','Yes, with a password in the subject'],2,'Company data stays in approved company systems.'],['A colleague you do not know chats you asking for the customer list for an urgent audit. What do you do first?',['Send it, audits are important','Verify who they are and whether they are authorised','Send half of it','Post it in the group chat'],1,'Confirm identity and need-to-know before sharing any confidential data.']]},
+{n:2,name:'Phish or legit',blurb:'Investigate a fake login, flick scam messages away and clear a runner gate and escape a phishing maze. Then defend a 10-email inbox and finish with a six-question knowledge check.',q:ATTACK_BRIEFS.map(b=>[b.message+' '+b.question,b.choices,b.correct,b.clue])},
+{n:3,name:'Firewall defender',blurb:'Arcade shooter. Blast weak passwords, malware and phishing links. Let the safe stuff through.',q:[['Which password is strongest?',['Innovati@2026','P@ssw0rd!','correct-horse-lamp-orbit-47','Alex1234'],2,'Long passphrases beat short clever ones.'],['What does multi-factor authentication (MFA) add?',['A second proof of identity beyond your password','Faster logins','A longer password','Nothing important'],0,'Even if a password leaks, the attacker still needs your second factor.']]},
+{n:4,name:'Desk inspector',blurb:'Four case files: a cubicle, the reception desk, a meeting room and a home office. Close every case to finish the level.',q:[['You find an unlabeled USB drive. What do you do?',['Plug it in to find the owner','Hand it to IT security','Take it home','Leave it on a desk'],1,'Unknown drives can carry malware. IT can inspect them safely.'],['Someone follows you through a secure door without using a badge. You…',['Hold the door, it is polite','Politely challenge them and report it to security','Ignore it','Lend them your badge'],1,'Tailgating defeats door security. Challenge and report.']]},
+{n:5,name:'Voice trap',blurb:'Take four phone calls. Spot the scammers, verify the genuine caller, and never give away a code.',q:[['A caller says they are from IT and asks for your one-time code. What do you do?',['Read it out, they are IT','Refuse, hang up and report it','Read half of it','Ask them to email you first'],1,'IT will never ask for your OTP. Hang up and report it.'],['Caller ID shows your bank’s real number, but the caller asks for your PIN. What do you do?',['Trust it, the number matches','Give the PIN and change it later','Hang up and call the number on your card','Ask for their employee ID and continue'],2,'Caller ID can be spoofed. Always call back on a number you trust.']]}];
+EXTRA_LEVELS.forEach((entry,index)=>{const n=index+6;LV.push({n,name:entry.name,blurb:entry.blurb,q:entry.questions.map(q=>[q.prompt,q.options,q.correct,q.explanation]),meta:entry.meta});S.assign[n]=entry.game});
 const BOTS=[['Meera K',620],['Dev Patel',540],['Sana R',480],['Jon M',410],['Lia T',350],['Omar S',280],['Tia B',190],['Raj N',120]];
 const board=()=>[...BOTS,[esc(S.name||'You'),S.score,1]].sort((a,b)=>b[1]-a[1]);
 const rank=()=>SERVER?(S.rank||'-'):board().findIndex(r=>r[2])+1;
-const open=n=>n==1||S.done.includes(n-1);
-const curLv=()=>LV.find(l=>!S.done.includes(l.n))||LV[4];
+const open=n=>n==1||S.done.includes(n)||S.done.includes(n-1);
+const curLv=()=>LV.find(l=>!S.done.includes(l.n))||LV[LV.length-1];
 const tier=()=>['Rookie','Scout','Guardian','Defender','Sentinel'][Math.min(S.done.length,4)];
 const total=()=>Object.values(S.best).reduce((a,b)=>a+(+b||0),0);
-function hdr(){
- const tabs=[['dash','01 Dashboard'],['road','02 Roadmap'],['top','03 Top players'],['rew','04 Rewards']];if(ADMIN())tabs.push(['admin','05 Admin']);
- $('#nav').innerHTML=S.name?tabs.map(t=>`<button data-a="nav" data-v="${t[0]}" class="${S.view==t[0]?'on':''}" aria-current="${S.view==t[0]?'page':'false'}">${t[1]}</button>`).join(''):'';
- $('#me').innerHTML=S.name?`<b class="amb">RANK #${rank()} &nbsp; ${esc(S.name).toUpperCase()}</b><br>${fmt(S.score)} PTS // <span class="mint">LVL ${String(Math.min(5,S.done.length+1)).padStart(2,'0')} ${tier().toUpperCase()}</span>`:'';
+function hdr(){if(S.view!=='play')dailyActive=false;
+ const entry=document.body.dataset.entry==='login'&&(S.view==='welcome'||S.view==='login');
+ $('#player-avatar').innerHTML=S.name&&!entry?`<button type="button" class="header-avatar-control" data-a="profile" aria-label="Open player profile" title="Your player profile">${hubAvatar(S.name,S.photo)}</button>`:'';
+ document.body.dataset.view=S.view;$('#app').classList.toggle('platform-view',S.view!=='play');
+ const tabs=[['games','PLAY Now'],['dash','Dashboard'],['road','Missions'],['top','Leaderboard'],['rew','Rewards']];if(ADMIN())tabs.push(['admin','Admin']);
+ $('#nav').innerHTML='';
+ const dock=$('#bottom-dock'),showDock=S.name&&!entry&&!['play','welcome','login','pwd','basics'].includes(S.view);
+ dock.hidden=!showDock;if(showDock){dock.innerHTML=`<nav id="bottom-dock-panel" class="bottom-dock-panel" aria-label="Main pages" ${S.menuOpen?'':'hidden'}>${tabs.map(t=>`<button data-a="nav" data-v="${t[0]}" class="${S.view==t[0]?'on':''}" aria-current="${S.view==t[0]?'page':'false'}">${t[1]}</button>`).join('')}</nav><button class="bottom-dock-toggle" type="button" data-a="menu" aria-controls="bottom-dock-panel" aria-expanded="${S.menuOpen}" aria-label="${S.menuOpen?'Close':'Open'} options menu"><span class="dock-grid" aria-hidden="true">▦</span><span>OPTIONS</span><b>${S.menuOpen?'×':'⌃'}</b></button>`}
+ $('#me').innerHTML=S.name&&!entry?`<b class="amb">RANK #${rank()} &nbsp; ${esc(S.name).toUpperCase()}</b><br>${fmt(S.score)} PTS // <span class="mint">LVL ${String(Math.min(LV.length,S.done.length+1)).padStart(2,'0')} ${tier().toUpperCase()}</span>`:'';
  $('#aud').innerHTML=`<button data-a="fx" aria-pressed="${SFX.s.sfx}" aria-label="Sound effects">SFX ${SFX.s.sfx?'ON':'OFF'}</button><button data-a="mus" aria-pressed="${SFX.s.music}" aria-label="Background music">MUSIC ${SFX.s.music?'ON':'OFF'}</button>`;
- save()}
+ dailyPaint();save()}
 function toast(t,c){const e=$('#toast');e.textContent=t;e.style.color=c;e.style.borderColor=c;e.style.display='block';clearTimeout(toast.t);toast.t=setTimeout(()=>e.style.display='none',1400)}
 /* score model: each level keeps its best score; the total is the sum of the bests (replays cannot inflate it) */
-function add(n,label){S.lp=Math.max(0,S.lp+n);S.score=S.base+Math.max(S.best[S.cur]||0,S.lp);hdr();toast((n>0?'+':'−')+Math.abs(n)+(label?' '+label:''),n>0?'#10b981':'#ef4444')}
+function add(n,label){if(S.view!=='play'||!dailyAllow())return;S.lp=Math.max(0,S.lp+n);S.score=S.base+Math.max(S.best[S.cur]||0,S.lp);hdr();toast((n>0?'+':'−')+Math.abs(n)+(label?' '+label:''),n>0?'#10b981':'#ef4444')}
 const V={
-dash(){const l=curLv(),g=Math.min(10,Math.round(S.score/80));$('#app').innerHTML=`
-<div class="panel"><span class="chip"><i class="led g"></i>Operator 1 // ready</span>
-<h1 style="margin:14px 0 4px">Welcome back, ${esc(S.name)}</h1><div class="mut">Finish today's mission to climb the daily board.</div></div>
-<div class="grid">
-<div class="inset"><div class="lbl">Points today</div><div class="big">${fmt(S.score)} <small class="mut" style="font-size:12px">/ 800 goal</small></div><div class="seg">${Array.from({length:10},(_,i)=>`<b class="${i<g?'f':''}"></b>`).join('')}</div></div>
-<div class="inset"><div class="lbl">Current level</div><div class="big">LVL ${String(l.n).padStart(2,'0')}</div><div class="mut">${l.name}</div></div>
-<div class="inset"><div class="lbl">Daily rank</div><div class="big">#${rank()}</div><div class="mut">of ${board().length} players today</div></div>
-${nextRew()}<div class="inset"><div class="lbl">Levels cleared</div><div class="big">${S.done.length} / 5</div><div class="seg">${LV.map(l=>`<b class="${S.done.includes(l.n)?'f':''}"></b>`).join('')}</div></div></div>
-<div class="panel"><div class="cart-h"><span class="lbl">Slot-0${l.n} // Mission</span><span class="chip"><i class="led"></i>${S.done.length==5?'Complete':'Ready'}</span></div>
-<h2>Level ${l.n}: ${l.name}</h2><p class="mut" style="max-width:62ch">${l.blurb}</p>
-<div style="display:flex;gap:8px;flex-wrap:wrap;margin:12px 0 18px"><span class="chip">1 mini game</span><span class="chip">${l.q.length} quiz questions</span><span class="chip mint">Right +100</span><span class="chip red">Wrong −50</span></div>
-<button class="btn" data-a="play" data-v="${l.n}">Play game</button></div>
-<div class="panel" style="display:flex;gap:10px;flex-wrap:wrap;align-items:center"><span class="lbl">Settings</span>${SERVER?(window.CQ_AUTH=='password'?'<button class="btn sub" data-a="pwd">Change password</button><button class="btn sub" data-a="logout">Sign out</button>':''):'<button class="btn sub" data-a="rename">Change name</button><button class="btn sub" data-a="resetme">Reset my progress</button>'}</div>`},
+games(){lobbyGames()},
+dash(){lobbyDashboard()},
 road(){const P=[[300,480],[130,375],[340,270],[140,160],[330,60]],s=LV[S.sel-1],c=curLv().n;
  $('#app').innerHTML=`<div class="split"><div class="map"><svg viewBox="0 0 520 560"><polyline points="${P.map(p=>p.join(',')).join(' ')}" fill="none" stroke="#ffb800" stroke-width="10" stroke-dasharray="14 8" opacity=".55"/></svg>
  ${P.map((p,i)=>{const n=i+1,st=S.done.includes(n)?'done':n==c?'cur':'';return (n==c?`<div class="you" style="left:${p[0]/5.2}%;top:${p[1]/5.6}%">YOU</div>`:'')+`<button class="node ${st} ${n==S.sel?'sel':''}" data-a="sel" data-v="${n}" style="left:${p[0]/5.2}%;top:${p[1]/5.6}%" aria-label="Level ${n}">${st=='done'?'✓':open(n)?n:'🔒'}</button>`}).join('')}</div>
@@ -190,11 +230,16 @@ admin(){$('#app').innerHTML=`<div class="panel"><div class="cart-h"><span class=
 // ctx.done()  -&gt; quiz</pre><button class="btn sub" data-a="unlock">Unlock all levels</button> <button class="btn red" data-a="reset">Reset demo</button></div></div>
  <div class="panel"><div class="cart-h"><span class="lbl">Rewards catalog</span><span class="chip"><i class="led"></i>Prototype</span></div><p class="mut">Set the score each reward needs. Players must also clear all 5 levels.</p><table><tr class="lbl"><th>Reward</th><th>Required score</th></tr>${REW.map(r=>`<tr><td>${r.name}</td><td><input type="number" min="0" step="100" value="${r.req}" data-a="req" data-v="${r.id}" style="width:110px;padding:6px;background:#0b0c0e;color:#f8fafc;border:1px solid #323542;font:inherit"></td></tr>`).join('')}</table><br><button class="btn sub" data-a="demo">Demo: clear all levels + 3,600 pts</button></div>`}};
 /* ---------- game engine ---------- */
-const GAMES={sorter:{title:'Data sorter',mount:sorter},voice:{title:'Voice trap',mount:voice},desk:{title:'Desk inspector',mount:desk},shoot:{title:'Firewall defender',mount:shoot},phish:{title:'Phish or legit',mount:phish},stub:{title:'Placeholder round',mount(el,ctx){el.innerHTML=`<div class="panel"><div class="cart-h"><span class="lbl">Module not installed</span></div><p>This level's game gets built in the next phase.</p><button class="btn" id="go">Run placeholder round</button></div>`;$('#go').onclick=()=>{ctx.add(50,'bonus');ctx.done()}}}};
+const GAMES={sorter:{title:'Data sorter',mount:sorter},voice:{title:'Voice trap',mount:voice},desk:{title:'Desk inspector',mount:desk},shoot:{title:'Firewall defender',mount:shoot},phish:{title:'Phish or legit',mount(el,ctx){S.cur===2?phishCampaign(el,ctx):phish(el,ctx)}},stub:{title:'Placeholder round',mount(el,ctx){el.innerHTML=`<div class="panel"><div class="cart-h"><span class="lbl">Module not installed</span></div><p>This level's game gets built in the next phase.</p><button class="btn" id="go">Run placeholder round</button></div>`;$('#go').onclick=()=>{ctx.add(50,'bonus');ctx.done()}}}};
 const ctx={add,done:()=>{S.gameLp=S.lp;quiz(0,0)}};
-function stage(t){S.view='play';hdr();const l=LV[S.cur-1];$('#app').innerHTML=`<div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px"><div><div class="lbl">Level ${l.n} // ${t}</div><h2>${l.name}</h2></div><button class="btn sub" data-a="nav" data-v="road">Exit</button></div><div id="stage"></div>`;return $('#stage')}
-async function play(n){if(SERVER){try{S.att=(await api('/levels/'+n+'/start','POST')).attemptId}catch(e){toast(e.message,'#ef4444');return}}S.cur=n;S.lp=0;S.combo=0;S.base=total()-(S.best[n]||0);S.score=total();GAMES[S.assign[n]].mount(stage('Game'),ctx)}
-function quiz(i,ok){const l=LV[S.cur-1],el=stage('Quiz '+(i+1)+'/'+l.q.length);
+let firewallNative=false;
+function enterFirewallScreen(){document.body.classList.add('firewall-immersive');if(innerWidth<=600&&innerHeight>innerWidth)return;try{if(document.documentElement.requestFullscreen)document.documentElement.requestFullscreen().then(()=>{if(document.body.classList.contains('firewall-immersive'))firewallNative=true;else document.exitFullscreen().catch(()=>{})}).catch(()=>{})}catch(e){}}
+function leaveFirewallScreen(){const wasImmersive=document.body.classList.contains('firewall-immersive');document.body.classList.remove('firewall-immersive');firewallNative=false;if(wasImmersive&&document.fullscreenElement===document.documentElement)document.exitFullscreen().catch(()=>{})}
+document.addEventListener('fullscreenchange',()=>{if(document.fullscreenElement===document.documentElement){firewallNative=true;return}if(firewallNative&&document.body.classList.contains('firewall-immersive')){firewallNative=false;act.nav('games')}});
+document.addEventListener('keydown',e=>{if(e.key==='Escape'&&document.body.classList.contains('firewall-immersive')){e.preventDefault();act.nav('games')}});
+function stage(t){S.view='play';hdr();const l=LV[S.cur-1],firewall=t==='Game'&&S.assign[S.cur]==='shoot';$('#app').innerHTML=`<div class="${firewall?'firewall-stagebar':''}" style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px"><div><div class="lbl">Level ${l.n} // ${t}</div><h2>${l.name}</h2></div>${firewall?`<span class="firewall-session">TODAY <b data-daily-time>${dailyText()}</b></span>`:''}<button class="btn sub${firewall?' firewall-exit':''}" data-a="nav" data-v="${firewall?'games':'road'}">Exit</button></div><div id="stage"></div>`;window.scrollTo(0,0);return $('#stage')}
+async function play(n){if(!basicsComplete()){S.view='basics';render();return}if(!dailyAllow()||!open(n))return;dailyActive=S.assign[n]!=='shoot';dailyLast=Date.now();if(SERVER){try{S.att=(await api('/levels/'+n+'/start','POST')).attemptId}catch(e){dailyActive=false;toast(e.message,'#ef4444');return}}S.cur=n;S.lp=0;S.combo=0;S.base=total()-(S.best[n]||0);S.score=total();S.lastResult=null;GAMES[S.assign[n]].mount(stage('Game'),ctx)}
+function quiz(i,ok){if(!dailyAllow())return;const l=LV[S.cur-1],el=stage('Quiz '+(i+1)+'/'+l.q.length);
  if(i>=l.q.length)return result(ok);
  const q=l.q[i];el.innerHTML=`<div class="panel"><h3 style="text-transform:none;line-height:1.5">${q[0]}</h3>${q[1].map((o,k)=>`<button class="btn sub opt" data-a="ans" data-v="${k}">${o}</button>`).join('')}<div id="qf"></div></div>`;
  el.onclick=async e=>{const b=e.target.closest('[data-a=ans]');if(!b||el.dataset.l)return;el.dataset.l=1;let ans=q[2],why=q[3],r=+b.dataset.v==q[2],dl=r?50:-25;
@@ -204,10 +249,8 @@ function quiz(i,ok){const l=LV[S.cur-1],el=stage('Quiz '+(i+1)+'/'+l.q.length);
   $('#qf').innerHTML=`<div class="fb"><b class="${r?'mint':'red'}">${r?'Correct. +50':'Wrong. −25'}</b><br>${why}</div><br><button class="btn" id="nx">${i+1<l.q.length?'Next question':'See results'}</button>`;$('#nx').onclick=()=>{el.onclick=null;quiz(i+1,ok+r)}}}
 function result(ok){if(!SERVER)return result0(ok);const el=stage('Saving');el.innerHTML='<div class="panel"><p class="mut">Saving your score…</p></div>';
  api('/attempts/'+S.att+'/finish','POST',{gameScore:S.gameLp||0}).then(r=>{S.best=r.best;S.done=r.cleared;S.score=r.total;S.rank=r.rank;result0(ok,r)}).catch(e=>{el.innerHTML=`<div class="panel"><h3 class="red">Could not save your score</h3><p class="mut">${esc(e.message)}</p><button class="btn" id="rt">Try again</button> <button class="btn sub" data-a="nav" data-v="road">Roadmap</button></div>`;$('#rt').onclick=()=>result(ok)})}
-function result0(ok,r){const l=LV[S.cur-1],el=stage('Results'),pts=r?r.score:S.lp;if(!r){if(!S.done.includes(l.n))S.done.push(l.n);S.best[l.n]=Math.max(S.best[l.n]||0,S.lp);S.score=total()}SFX.win();hdr();
- el.innerHTML=`<div class="panel"><div class="cart-h"><span class="lbl">Level ${l.n} cleared</span><span class="chip"><i class="led g"></i>Saved</span></div><h1>${pts>=0?'+':''}${pts} pts</h1><p class="mut">Quiz: ${ok}/${l.q.length} correct. Level best: ${S.best[l.n]} pts. You are #${rank()} on today's board.</p>
- <button class="btn" data-a="${l.n<5?'play':'nav'}" data-v="${l.n<5?l.n+1:'top'}">${l.n<5?'Next level':'See daily rank'}</button> <button class="btn sub" data-a="nav" data-v="road">Roadmap</button></div>`}
-/* ---------- game 1: email phishing (Gmail look) ---------- */
+function result0(ok,r){if(!dailyAllow())return;dailyActive=false;const l=LV[S.cur-1],pts=r?r.score:S.lp;if(!r){if(!S.done.includes(l.n))S.done.push(l.n);S.best[l.n]=Math.max(S.best[l.n]||0,S.lp);S.score=total()}S.lastResult={level:l.n,points:pts,correct:ok,total:l.q.length};S.sel=Math.min(l.n+1,LV.length);S.menuOpen=false;S.view='road';SFX.win();render()}
+/* ---------- level 2: social engineering lab and phishing inbox ---------- */
 const ic=(p,s=24)=>`<svg width="${s}" height="${s}" viewBox="0 0 24 24"><path d="${p}"/></svg>`;
 const IC={menu:'M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z',search:'M15.5 14h-.79l-.28-.27A6.47 6.47 0 0016 9.5 6.5 6.5 0 109.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z',
 tune:'M3 17v2h6v-2H3zM3 5v2h10V5H3zm10 16v-2h8v-2h-8v-2h-2v6h2zM7 9v2H3v2h4v2h2V9H7zm14 4v-2H11v2h10zm-6-4h2V7h4V5h-4V3h-2v6z',
@@ -236,25 +279,20 @@ function phish(el,ctx){
  const E=[
  ['HR Team','hr@innovatiview.com','Holiday calendar 2026 published on the intranet',0,'<p>Dear all,</p><p>Please find the official holiday calendar for 2026 on the intranet. It lists the 12 company holidays and the optional holidays, which can be chosen on a first-come basis through the HR portal.</p><p>You can view and download the calendar here: {L}</p><p>If you have any questions, please write to us or speak to your HR business partner.</p>'+SG('Neha Kapoor','HR Business Partner | People &amp; Culture','4012')+F,'Holiday calendar 2026','innovatiview.com/hr/calendar',0,'Exact company domain, a named sender with title and extension, a normal request and a link that stays on innovatiview.com.','3:18 AM'],
  ['IT Helpdesk','it-support@innovatiview.co','ACTION REQUIRED: Your password expires in 24 hours',1,'<p>Dear User,</p><p>Our system has detected that your email password will expire in <b>24 hours</b>. To avoid losing access to your mailbox, calendar and files, you must verify your account immediately.</p><p>{L}</p><p>Failure to do so will result in permanent suspension of your account.</p><p>Thank you for your cooperation.</p><div class="sig">IT Support Team<br>Innovatiview</div>','Keep my password','innovatiview-login.co/reset',0,'The sender ends in .co, not .com. It uses a generic "Dear User", has no named sender or extension, threatens suspension and links to an off-domain login page.','Sep 30'],
- ['Priya Sharma','priya.sharma@innovatiview.com','Notes from today’s stand-up (Platform team)',0,'<p>Hi Alex,</p><p>Thanks for joining the stand-up this morning. Here is a quick summary:</p><ul><li>Release 4.2 testing is complete and go-live is planned for Thursday.</li><li>Alex to share the updated test report by EOD tomorrow.</li><li>Sam to confirm the client demo slot.</li></ul><p>The full notes are in the team folder: {L}. Please add anything I might have missed.</p><p>Thanks,</p>'+SG('Priya Sharma','Senior Project Coordinator','4107')+F,'Platform team notes','innovatiview.com/teams/notes',0,'A known colleague on the exact domain, with specific details only your team would know and nothing urgent or unusual asked.','Sep 30'],
  ['Rahul Mehta','rahul.mehta.ceo@gmail.com','Quick favour (confidential)',1,'<p>Hi Alex,</p><p>Are you available right now? I am in a client meeting and cannot take calls. I need a quick favour that must stay between us.</p><p>I need to purchase 5 gift cards (₹10,000 each) for a client delivery today. Please buy them from an online store and send me the card codes by reply. I will reimburse you by end of day.</p><p>Please keep this confidential and let me know as soon as it is done.</p><p>Regards,<br>Rahul Mehta<br><span style="color:#80868b">Sent from my iPhone</span></p>','','',0,'Executives do not use personal Gmail addresses for company requests. Secrecy, urgency, "no calls" and gift cards are classic CEO fraud.','Sep 30'],
  ['Payroll','payroll@innovatiview.com','Your payslip for September 2026 is now available',0,'<p>Dear Alex,</p><p>Your payslip for the month of September 2026 has been generated and is available in the payroll portal (company SSO login). Salary will be credited as per the usual schedule.</p><p>To view or download it, please open the portal here: {L}</p><p>For any payroll queries, please raise a ticket with the Finance Helpdesk within 5 working days.</p>'+SG('Payroll Operations','Finance','4230')+F,'Payroll portal','portal.innovatiview.com/payslip',0,'Exact domain, you are addressed by name, and the link goes to a portal.innovatiview.com sub-domain. Even so, you can always open the portal yourself.','Sep 30'],
  ['Accounts','accounts@innovatlview.com','Invoice 4471 – Overdue payment reminder',1,'<p>Hello,</p><p>This is a reminder that invoice <b>#4471</b> dated 12 September 2026 for ₹2,48,500 is now <b>overdue</b>. Please review the attached invoice and approve the payment today to avoid penalty charges.</p><p>Kindly confirm once the payment has been released.</p><p>Regards,<br>Accounts Department<br>Innovatiview</p>','','','invoice_4471.html','Look closely: "innovatlview" uses an l instead of an i. It also has a vague "Hello", no named contact, pressure to pay today and an unexpected .html attachment.','Sep 29'],
- ['DHL Express','track@dhl-parcel-notice.net','Parcel on hold: pay ₹49 delivery fee',1,'<p>Dear Customer,</p><p>We were unable to deliver your parcel (Tracking ID: 7741 9920 3381) because an outstanding delivery fee of ₹49 was not paid. The parcel will be returned to the sender in 24 hours.</p><p>Pay the fee here to reschedule delivery: {L}</p><p>DHL Express Customer Service</p>','Pay fee now','dhl-parcel-notice.net/pay',0,'You did not order a parcel, and DHL does not use this domain. A small fee plus a 24-hour deadline is bait to collect your card details.','Sep 29'],
- ['Anita Verma','anita.verma@innovatiview.com','Q3 business review deck: please review before Thursday',0,'<p>Hi team,</p><p>I have uploaded the draft deck for Thursday’s Q3 business review. Could you please review your sections and add comments by Wednesday, 5 PM?</p><p>Deck: {L}</p><p>Slide 6 (pipeline) and slide 9 (hiring plan) still need inputs, so please prioritise those.</p><p>Thanks in advance,</p>'+SG('Anita Verma','Program Manager','4055')+F,'Q3 review deck','innovatiview.com/share/q3-deck',0,'Exact domain, an expected topic and deadline, and a link that stays on innovatiview.com.','Sep 29'],
  ['Microsoft 365','no-reply@micros0ft-support.com','Microsoft account: unusual sign-in activity',1,'<p><b style="font-size:18px">Microsoft account</b></p><p><b>Unusual sign-in activity</b></p><p>We detected something unusual about a recent sign-in to the Microsoft account alex.carter@innovatiview.com.</p><p>Sign-in details:<br>Country/region: Russia<br>IP address: 203.0.113.45<br>Date: 28 Sep 2026, 11:42 PM</p><p>Please verify your account immediately: {L}</p><p>If you do not verify within 12 hours, your account will be suspended.</p><p>Thanks,<br>The Microsoft account team</p>','Verify account','micros0ft-support.com/verify',0,'"micros0ft" uses a zero instead of an o. The email copies the Microsoft style but adds a 12-hour suspension threat to rush you.','Sep 28'],
- ['Rohan Gupta','rohan.gupta@innovatiview.com','Team lunch this Friday?',0,'<p>Hi all,</p><p>Let’s do a team lunch this Friday at 1 PM to celebrate the release. I will book the group area in the cafeteria. Please reply by Thursday noon with your food preference (veg / non-veg).</p><p>Cheers,</p>'+SG('Rohan Gupta','Software Engineer','4121')+F,'','',0,'Normal internal chat from a colleague on the right domain, and nothing is asked of you except a reply.','Sep 28'],
- ['LinkedIn','security-noreply@linkedin-verify-account.com','Alex, your profile was viewed 47 times this week',1,'<p>Hi Alex,</p><p>Your profile appeared in 47 searches this week. People from <b>Google, Amazon and Microsoft</b> viewed your profile.</p><p>To see the full list of viewers, log in to confirm your account: {L}</p><p style="color:#80868b;font-size:12px">You are receiving this email because you have a LinkedIn account.<br>© 2026 LinkedIn Corporation</p>','See who viewed','linkedin-verify-account.com/login',0,'LinkedIn only uses linkedin.com. It plays on curiosity and sends you to an off-domain login page.','Sep 28'],
  ['IT Security','security@innovatiview.com','Reminder: Annual security awareness training due by 15 October',0,'<p>Dear colleagues,</p><p>This is a reminder that the annual Information Security Awareness training must be completed by <b>15 October 2026</b>. The course takes about 30 minutes and is mandatory for all employees.</p><p>You can access the course in the learning portal with your company SSO: {L}</p><p>Please remember that IT Security will never ask for your password over email or phone.</p><p>Thank you for helping keep Innovatiview safe.</p>'+SG('Karan Malhotra','Information Security Officer','4001')+F,'Learning portal','learn.innovatiview.com',0,'Exact domain, a named officer, a reasonable deadline, no threats, and the link stays on a innovatiview.com sub-domain.','Sep 27'],
- ['Corporate Bank','alert@corp-bank-secure.info','Your salary account has been temporarily locked',1,'<p>Dear Customer,</p><p>Due to a security upgrade, your salary account has been temporarily locked. To unlock it, please confirm the following details within 24 hours:</p><p>- Card number<br>- Expiry date<br>- ATM PIN</p><p>{L}</p><p>Corporate Banking Team</p>','Unlock account','corp-bank-secure.info/unlock',0,'Banks never ask for card numbers or PINs by email. The .info domain, the generic greeting and the 24-hour deadline are all warning signs.','Sep 27'],
  ['Facilities','facilities@innovatiview.com','Fire evacuation drill: Thursday, 11:00 AM',0,'<p>Dear all,</p><p>A scheduled fire evacuation drill will be held on <b>Thursday, 8 October at 11:00 AM</b>. When the alarm sounds, please:</p><ol><li>Stop work and lock your laptop screen.</li><li>Use the nearest stairwell. Do not use the lifts.</li><li>Assemble at the main car park and wait for your floor warden.</li></ol><p>The drill should take around 20 minutes. Thank you for your cooperation.</p>'+SG('Mohit Arora','Facilities Manager','4300')+F,'','',0,'A routine notice from the right domain with a named sender and nothing to click.','Sep 27'],
  ['Sneha Rao','sneha.rao@innovatiview.com.hr-portal.net','Updated leave policy: acknowledgement required',1,'<p>Hi Alex,</p><p>HR has updated the leave policy effective 1 October. All employees must read and sign the attached policy document today. Please open the attachment and sign in with your company email and password to acknowledge it.</p><p>Employees who have not acknowledged by end of day will have their leave applications blocked.</p><p>Thanks,<br>Sneha Rao<br>HR Operations</p>','','','leave_policy.pdf.exe','Read the domain from the right: it is hr-portal.net, and innovatiview.com is only a decoy prefix. A .pdf.exe file is a program, and the email asks for your password and threatens you.','Sep 26'],
  ['Google','no-reply@accounts.google.com','Security alert',0,'<p><b style="font-size:18px">A new sign-in on Windows</b></p><p>alex.carter@innovatiview.com</p><p>We noticed a new sign-in to your Google Account on a Windows device. If this was you, you do not need to do anything. If not, we will help you secure your account.</p><p>{L}</p><p style="color:#80868b;font-size:12px">You can also see security activity at myaccount.google.com/notifications.<br>You received this email to let you know about important changes to your Google Account and services.<br>© 2026 Google LLC</p>','Check activity','myaccount.google.com/notifications',0,'The genuine google.com domain and no demand or threat. Even so, the safest habit is to check your account by visiting it yourself.','Sep 26']];
- const bdy=m=>m[4].replace('{L}',m[5]?`<a data-l="${m[6]}">${m[5]}</a>`:''),snp=e=>e[4].replace(/<[^>]+>/g,' ').replace('{L}',e[5]).replace(/\s+/g,' ').trim(),dom=a=>a.split('@')[1].split('.').slice(-2).join('.');
+ const snp=e=>e[4].replace(/<[^>]+>/g,' ').replace('{L}',e[5]).replace(/\s+/g,' ').trim();
+ const bdy=m=>m[4].replace('{L}',m[5]?`<button type="button" class="mail-link" data-l="${m[6]}" title="https://${m[6]}">${m[5]}</button>`:''),dom=a=>a.split('@')[1];
  const pf=(S.name||'Alex').split(' ')[0],pm=((S.name||'alex carter').toLowerCase().replace(/[^a-z ]/g,'').trim().replace(/\s+/g,'.')||'user')+'@innovatiview.com';
  E.forEach(e=>e.forEach((v,i)=>{if(typeof v=='string')e[i]=v.replace(/alex\.carter@innovatiview\.com/g,pm).replace(/\bAlex\b/g,esc(pf))}));
- const A={},seen={};let sel=-1,combo=0,det=0;
- const n=()=>Object.keys(A).length,un=()=>E.length-Object.keys(seen).length;
+ const A={},seen={},earned={};let sel=-1,combo=0,bestCombo=0,det=0,finished=false;
+ const n=()=>Object.keys(A).length,correct=()=>E.filter((m,i)=>A[i]===m[3]).length,un=()=>E.length-Object.keys(seen).length;
  const nav=[['inbox','Inbox',1],['star','Starred'],['snooze','Snoozed'],['send','Sent'],['file','Drafts'],['bag','Purchases'],['more','More']];
  const rail=`<div class="rr"><svg width="24" height="24" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="3" fill="#1a73e8"/><text x="12" y="16.5" font-size="10" text-anchor="middle" fill="#fff" font-family="Arial">31</text></svg><svg width="24" height="24" viewBox="0 0 24 24"><circle cx="12" cy="9" r="6" fill="#fbbc04"/><rect x="9" y="15" width="6" height="5" fill="#fbbc04"/></svg><svg width="24" height="24" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" fill="#1a73e8"/><path d="M7 12l3 3 7-7" stroke="#fff" stroke-width="2" fill="none"/></svg><svg width="24" height="24" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4" fill="#1a73e8"/><path d="M4 20c0-4 4-6 8-6s8 2 8 6z" fill="#1a73e8"/></svg>${ic(IC.plus)}</div>`;
  const top=`<div class="gt"><div class="ib">${ic(IC.menu)}</div><div class="logo">${LOGO}Gmail</div><div class="srch">${ic(IC.search)}<span>Search mail</span>${ic(IC.tune)}</div><div class="upg"><div class="ib">${ic(IC.help)}</div><div class="ib">${ic(IC.gear)}</div><b>Upgrade</b><div class="ib">${ic(IC.apps)}</div><div class="av">A</div></div></div>`;
@@ -263,56 +301,96 @@ function phish(el,ctx){
   <div class="tabs"><div class="tab a">${ic(IC.inbox,20)}Primary</div><div class="tab">${ic(IC.tag,20)}Promotions</div><div class="tab">${ic(IC.ppl,20)}Social</div><div class="tab">${ic(IC.info,20)}Updates</div></div>
   ${E.map((e,i)=>`<div class="rw ${seen[i]?'rd':''}" data-m="${i}" tabindex="0" role="button"><div class="cb"></div>${ic(IC.star,20)}<div class="sn">${e[0]}</div><div class="ms">${A[i]!=null?`<span class="lb ${e[3]?'p':'l'}">${e[3]?'Phishing':'Legit'}</span>`:''}<b>${e[2]}</b> - ${snp(e)}</div><div class="dt">${e[9]}</div>${e[7]?`<div class="br"></div><span class="ac"><i></i>${e[7]}</span>`:''}</div>`).join('')}`}
  function mail(){const m=E[sel],d=A[sel]!=null,ok=A[sel]==m[3];
-  return `<div class="tb"><div class="ib" data-back="1" style="cursor:pointer">${ic(IC.back)}</div><div class="ib">${ic(IC.dots,20)}</div><span class="sp">${sel+1} of ${E.length}</span></div>
-  <div class="ev"><div class="subj">${m[2]}<span>Inbox</span></div><div class="hd"><div class="av" style="background:#5f6368">${m[0][0]}</div><div class="ph"><b>${m[0]}</b> <small>${det?'&lt;'+m[1]+'&gt;':''}</small><div class="sd" data-d="1">to me ▾</div>${det?`<div class="det">from: <b>${m[0]}</b> &lt;${m[1]}&gt;<br>to: ${pm}<br>date: ${m[9]}<br>mailed-by: ${dom(m[1])}<br>signed-by: ${dom(m[1])}</div>`:''}</div><small>${m[9]}</small></div>
+  return `<div class="tb"><button type="button" class="ib gm-icon" data-back="1" aria-label="Back to inbox">${ic(IC.back)}</button><div class="ib">${ic(IC.dots,20)}</div><span class="sp">${sel+1} of ${E.length}</span></div>
+  <div class="ev"><div class="subj" id="mail-title" tabindex="-1">${m[2]}<span>Inbox</span></div><div class="hd"><div class="av" style="background:#5f6368">${m[0][0]}</div><div class="ph"><b>${m[0]}</b> <small>&lt;${m[1]}&gt;</small><button type="button" class="sd gm-detail" data-d="1" aria-label="${det?'Hide':'Inspect'} sender address" aria-expanded="${!!det}">to me ▾</button>${det?`<div class="det">from: <b>${m[0]}</b> &lt;${m[1]}&gt;<br>to: ${pm}<br>date: ${m[9]}<br>mailed-by: ${dom(m[1])}<br>signed-by: ${dom(m[1])}</div>`:''}</div><small>${m[9]}</small></div>
   <div class="bd">${bdy(m)}${m[7]?`<span class="ac"><i></i>${m[7]}</span>`:''}</div>
-  ${d?`<div class="fb" style="margin-left:56px"><b class="${ok?'mint':'red'}">${ok?'Correct. +'+(100+25*Math.min(combo-1,4))+(combo>1?' (combo x'+combo+')':''):'Wrong. −50'}</b><br>This email is ${m[3]?'<b class="red">PHISHING</b>':'<b class="mint">LEGIT</b>'}. ${m[8]}</div>${n()<E.length?'<br><div style="padding-left:56px"><button class="btn sub" data-n="1">Next email</button></div>':''}`:`<div class="vd"><div class="pl rp" data-v="1" role="button" tabindex="0">${ic(IC.warn,18).replace('<svg','<svg style="fill:#d93025"')}Report phishing</div><div class="pl sf" data-v="0" role="button" tabindex="0">${ic(IC.ok,18).replace('<svg','<svg style="fill:#188038"')}Mark as safe</div></div>`}</div>`}
- function draw(){el.innerHTML=`<div class="hint"><span class="lbl">Open each email. Report phishing or mark safe. Company domain: <b class="amb">innovatiview.com</b></span><span class="lbl">${n()}/${E.length} sorted ${combo>1?'// combo x'+combo:''} ${n()==E.length?'<button class="btn" id="fin" style="margin-left:12px">Finish inbox</button>':''}</span></div>
-  <div class="inset" style="padding:6px"><div class="gm">${top}<div class="gb">${side()}<div class="mp">${sel<0?list():mail()}</div>${rail}</div><div class="status" id="st"></div></div></div>`}
- const go=t=>{const r=t.closest('[data-m]');if(r){sel=+r.dataset.m;seen[sel]=1;det=0;draw();return 1}};
+  ${d?`<div class="fb mail-feedback ${ok?'':'wrong'}" id="mail-feedback" role="status" tabindex="-1"><b class="${ok?'mint':'red'}">${ok?'Correct. +'+earned[sel]:'Wrong. −50'}</b><br>This email is ${m[3]?'<b class="red">PHISHING</b>':'<b class="mint">LEGIT</b>'}. ${m[8]}</div>${n()<E.length?'<br><div style="padding-left:56px"><button class="btn sub" data-n="1">Next email</button></div>':''}`:`<div class="vd"><button type="button" class="pl rp" data-v="1">${ic(IC.warn,18).replace('<svg','<svg style="fill:#d93025"')}Report phishing</button><button type="button" class="pl sf" data-v="0">${ic(IC.ok,18).replace('<svg','<svg style="fill:#188038"')}Mark as safe</button></div>`}</div>`}
+ function debrief(){const hits=correct(),missed=E.filter((m,i)=>A[i]!==m[3]);return `<section class="mail-debrief" id="mail-report" tabindex="-1"><span class="lbl">Mission complete // Inbox secured</span><h3 style="margin:12px 0">${hits===E.length?'Perfect detection':hits>=8?'Sharp-eyed defender':'Training complete'}</h3><p>You identified <b>${hits} of ${E.length}</b> emails correctly. Best streak: <b>${bestCombo}</b>. Mission score: <b>${fmt(S.lp)} points</b>.</p><p>Skill unlocked: inspect the sender, check the destination, and question the request. A familiar name or logo alone is never proof.</p>${missed.length?`<details><summary>Review ${missed.length} missed clue${missed.length===1?'':'s'}</summary><ul>${missed.map(m=>`<li><b>${m[2]}</b> — ${m[8]}</li>`).join('')}</ul></details>`:'<p class="mint">Clean sweep! Take those detective skills into the knowledge check.</p>'}<button class="btn" id="fin">Continue to quiz &gt;</button></section>`}
+ function draw(focus){el.innerHTML=`<div class="hint"><span class="lbl">Open each email. Report phishing or mark safe. Company domain: <b class="amb">innovatiview.com</b></span><span class="lbl">${n()}/${E.length} sorted ${combo>1?'// combo x'+combo:''} ${n()==E.length?'<button class="btn" data-review="1" style="margin-left:12px">Review results</button>':''}</span></div>
+  <div class="gm">${top}<div class="gb">${side()}<div class="mp">${sel<0?list():mail()}</div>${rail}</div><div class="status" id="st" role="status"></div></div>${n()===E.length?debrief():''}`;if(focus){const target=el.querySelector(focus);if(target)target.focus()}}
+ const go=t=>{const r=t.closest('[data-m]');if(r){sel=+r.dataset.m;seen[sel]=1;det=0;draw('#mail-title');return 1}};
  el.onclick=e=>{const t=e.target;
-  if(t.closest('#fin'))return ctx.done();
-  if(t.closest('[data-n]')){sel=E.findIndex((_,i)=>A[i]==null);det=0;if(sel>=0)seen[sel]=1;return draw()}
-  const v=t.closest('[data-v]');if(v&&A[sel]==null){const r=+v.dataset.v==E[sel][3];A[sel]=+v.dataset.v;combo=r?combo+1:0;SFX[r?'ok':'bad']();r?ctx.add(100+25*Math.min(combo-1,4),combo>1?'combo x'+combo:''):ctx.add(-50,'wrong');return draw()}
-  if(t.closest('[data-l]'))return toast('Link blocked in training','#ffb800');
-  if(t.closest('[data-d]')){det=!det;return draw()}
-  if(t.closest('[data-back]')){sel=-1;return draw()}
+  if(t.closest('#fin')){if(n()!==E.length||finished)return;finished=true;return ctx.done()}
+  if(t.closest('[data-review]')){const report=el.querySelector('#mail-report');if(report){report.focus();report.scrollIntoView({block:'center'})}return}
+  if(t.closest('[data-n]')){sel=E.findIndex((_,i)=>A[i]==null);det=0;if(sel>=0)seen[sel]=1;return draw('#mail-title')}
+  const v=t.closest('[data-v]');if(v&&sel>=0&&A[sel]==null){const r=+v.dataset.v===E[sel][3];A[sel]=+v.dataset.v;combo=r?combo+1:0;bestCombo=Math.max(bestCombo,combo);earned[sel]=r?100+25*Math.min(combo-1,4):-50;SFX[r?'ok':'bad']();ctx.add(earned[sel],r?(combo>1?'streak '+combo:'good detection'):'clue missed');return draw('#mail-feedback')}
+  if(t.closest('[data-l]'))return toast('Training link — inspect the destination, never open it.','#ffb800');
+  if(t.closest('[data-d]')){det=!det;return draw('[data-d]')}
+  if(t.closest('[data-back]')){sel=-1;return draw('[data-m]')}
   go(t)};
- el.onkeydown=e=>{if(e.key=='Enter'){const t=e.target;if(t.dataset.m!=null)go(t);else if(t.dataset.v!=null)t.click()}};
- el.onmouseover=e=>{const l=e.target.closest('[data-l]');if(l&&$('#st'))$('#st').textContent='https://'+l.dataset.l};
- el.onmouseout=()=>{if($('#st'))$('#st').textContent=''};
+ el.onkeydown=e=>{if(e.key==='Enter'||e.key===' '){const row=e.target.closest('[data-m]');if(row){e.preventDefault();go(row)}}};
+ const previewLink=e=>{const link=e.target.closest('[data-l]'),status=el.querySelector('#st');if(status)status.textContent=link?'https://'+link.dataset.l:''};
+ el.onmouseover=previewLink;el.onfocusin=previewLink;
+ el.onmouseout=el.onfocusout=()=>{const status=el.querySelector('#st');if(status)status.textContent=''};
  draw()}
-/* ---------- game 2: firewall defender (shooter) ---------- */
+/* ---------- level 3: firewall defender (shooter) ---------- */
+function firewallTutorial(){return `<div class="firewall-tutorial"><div class="firewall-tutorial-copy"><div class="lbl mint">LEVEL 03 · QUICK BRIEFING</div><h2>DEFEND THE NETWORK.</h2><p class="firewall-ship-intro">The violet spaceship is yours.</p><div class="firewall-quick-rules"><p><b>SHOOT</b> Viruses, fake or unknown requests, weak passwords, public files, and OFF protections.</p><p><b>LET PASS</b> ON protections, locked or private files, verified checks, and backups.</p></div><p class="firewall-label-tip">Sharp warning cards: shoot. Rounded check cards: let pass. Read the labels too.</p><div class="firewall-controls"><span><b>PHONE</b> Drag to move · tap to fire</span><span><b>KEYBOARD</b> ← → to move · Space to fire</span></div><button class="btn" id="st0">START GAME →</button><small>45-second round · Your daily timer starts when you begin.</small></div><div class="firewall-demo" role="img" aria-label="Violet defender ship firing toward an angry virus while a trusted packet passes safely"><svg viewBox="0 0 380 250" aria-hidden="true"><defs><linearGradient id="fw-demo-bg" x2="0" y2="1"><stop stop-color="#21182f"/><stop offset="1" stop-color="#0b1925"/></linearGradient><linearGradient id="fw-demo-ship" x2="0" y2="1"><stop stop-color="#c6a5f5"/><stop offset="1" stop-color="#604185"/></linearGradient></defs><rect width="380" height="250" fill="url(#fw-demo-bg)"/><g stroke="#926dc52a" stroke-width="1"><path d="M0 45h380M0 90h380M0 135h380M0 180h380M55 0v250M130 0v250M205 0v250M280 0v250M355 0v250"/></g><path d="M0 209h380" stroke="#baf263" stroke-width="3" stroke-dasharray="9 6"/><path d="M190 179v-78" stroke="#dfffad" stroke-width="5" stroke-linecap="round"/><path d="M190 80l-6 16h12z" fill="#e8ffd0"/><g transform="translate(190 198)"><path d="M0-34 12-12 30 12 27 20 9 10 0 18-9 10-27 20-30 12-12-12z" fill="url(#fw-demo-ship)" stroke="#dfc7ff" stroke-width="3"/><ellipse cy="-9" rx="5" ry="12" fill="#baf263"/><path d="M-11 15-7 29 0 17 7 29 11 15" fill="#baf263" opacity=".8"/></g><g transform="translate(190 53)" fill="#b05b94" stroke="#ffd0df" stroke-width="3"><path d="M0-27 9-19 23-22 21-8 30 0 21 8 23 22 9 19 0 27-9 19-23 22-21 8-30 0-21-8-23-22-9-19z"/><path d="m-14-7 9 4m19-4-9 4" stroke="#3f1737" stroke-width="4"/><path d="M-12 10q12-13 24 0" fill="none" stroke="#351026" stroke-width="4"/></g><g transform="translate(292 93)"><rect x="-51" y="-23" width="102" height="46" rx="12" fill="#20383e" stroke="#87e4d0" stroke-width="2"/><circle cx="-30" cy="0" r="12" fill="none" stroke="#87e4d0" stroke-width="2"/><path d="m-36 0 5 5 8-10" fill="none" stroke="#87e4d0" stroke-width="2"/><path d="M-11 0h44" stroke="#d8f8f2" stroke-width="3"/></g></svg><span class="firewall-demo-label ship">YOUR SHIP</span><span class="firewall-demo-label virus">SHOOT THREATS</span><span class="firewall-demo-label safe">LET SAFE PASS</span></div></div>`}
 function shoot(el,ctx){
- const W=640,H=480,
- TH=[['123456','weak password'],['password1','weak password'],['qwerty','weak password'],['admin123','weak password'],['free_gift.exe','malware'],['bit.ly/win$$','phishing link'],['FAKE-LOGIN','fake login page']],
- OK=[['MFA code','MFA'],['Patch v2.1','updates'],['Backup OK','backups'],['Tr33-Lamp-47!','strong passphrase'],['VPN on','VPN']];
- el.innerHTML=`<div class="panel" id="gb"><div class="cart-h"><span class="lbl">Slot-02 // Firewall defender</span><span class="chip"><i class="led"></i>Standby</span></div>
- <h2>Defend the firewall</h2><p>Threats fall toward your firewall line. <b class="red">Shoot</b> weak passwords, malware, phishing links and fake logins. <b class="mint">Let safe items through</b>: MFA, updates, backups and strong passphrases.</p>
- <div style="display:flex;gap:8px;flex-wrap:wrap;margin:10px 0"><span class="chip mint">Threat stopped +20</span><span class="chip mint">Safe item passes +10</span><span class="chip red">Shoot safe item −50</span><span class="chip red">Threat breaches −25</span></div>
- <p class="mut">Move with mouse, touch or arrow keys. Fire with click, tap or Space. 45 seconds. A ransomware boss arrives near the end.</p><button class="btn" id="st0">Start</button></div>
- <canvas id="cv" width="640" height="480" style="display:none;width:100%;max-width:640px;margin:0 auto;background:#0b0c0e;border:1px solid #323542;touch-action:none;cursor:crosshair"></canvas>`;
+ let W=800,H=450,portrait=false;
+ const TH=[
+  ['Weak: 123456','weak password','credential'],['Weak: password1','weak password','credential'],['Weak: qwerty','weak password','credential'],['Weak: admin123','weak password','credential'],
+  ['Reused password','reused password','credential'],['Shared password','shared account','credential'],['Leaked password','exposed password','credential'],['Screen unlocked','unlocked device','credential'],
+  ['Unknown short link','suspicious short link','phish'],['Fake login page','fake sign-in page','phish'],['Fake payroll mail','payroll phishing','phish'],['Gift card scam','gift card scam','phish'],
+  ['Code theft request','code theft','phish'],['Unknown MFA prompt','unexpected MFA prompt','phish'],['Unknown reset link','unexpected reset link','phish'],['Unknown QR sign-in','unknown QR sign-in','phish'],
+  ['Fake bank request','impersonation','phish'],['Fake helpdesk call','support scam','phish'],['Unknown ID request','identity data request','phish'],['Fake website copy','lookalike website','phish'],
+  ['Fake delivery text','delivery scam','phish'],['Fake lockout text','scare tactic','phish'],['Unknown doc link','unexpected share invite','phish'],['Unknown remote app','unsolicited remote access','phish'],
+  ['Virus gift.exe','malware','virus'],['Worm virus','malware','virus'],['Virus invoice.exe','malware attachment','virus'],['Virus photo.scr','malware screensaver','virus'],
+  ['Virus crack.exe','untrusted software','virus'],['Virus resume.exe','malware attachment','virus'],['Unknown USB.exe','untrusted USB file','virus'],['Trojan virus','malware','virus'],
+  ['Public HR file','overshared file','risk'],['Antivirus OFF','disabled protection','risk'],['Updates OFF','unpatched device','risk'],['Public payroll','sensitive data leak','risk']
+ ],
+ OK=[
+  ['MFA ON','MFA'],['Updates ON','updates'],['Backup ready','backups'],['Strong password','strong passphrase'],['VPN ON','VPN'],['Passkey ON','passkey'],
+  ['Unique password','unique password'],['Screen locked','screen lock'],['Files encrypted','encryption'],['Phish reported','reporting'],['Unknown MFA denied','MFA denied'],['Sender verified','sender verification'],
+  ['Full URL checked','URL check'],['Known number called','callback verification'],['Private file share','limited sharing'],['Access limited','least privilege'],['Auto-updates ON','auto updates'],
+  ['Backup tested','tested backup'],['Approved app','approved software'],['Unknown USB blocked','unknown USB avoided'],['Signed out','session safety'],['Attachment checked','attachment check'],
+  ['Privacy screen ON','screen privacy'],['Trusted bookmark','trusted sign-in path']
+ ];
+ el.innerHTML=`<div class="firewall-shell"><div class="panel firewall-brief" id="gb"><div class="cart-h"><span class="lbl">Mission 03 // Network defense</span><span class="chip">45-second survival</span></div>${firewallTutorial()}</div><div class="firewall-arena" hidden><canvas id="cv" width="800" height="450" aria-label="Firewall Defender arena. Read the labels to decide which packets to shoot. Block viruses and risky traffic; let trusted traffic pass. Drag to aim and tap to fire on touchscreens; arrow keys move and Space fires on keyboard." tabindex="0" style="display:none;width:100%;margin:0 auto;touch-action:none;cursor:crosshair"></canvas><div class="firewall-arena-foot"><span>READ THE SIGNAL</span><span>BLOCK RISK · PASS TRUSTED</span><span>← → MOVE · SPACE FIRE</span><span class="firewall-touch-hint">DRAG TO AIM · TAP TO FIRE</span></div></div></div>`;
  const cv=$('#cv'),g=cv.getContext('2d'),gb=$('#gb'),F='700 12px "JetBrains Mono",monospace',R=(a,b)=>a+Math.random()*(b-a);
- let ship=W/2,bul=[],it=[],pt=[],tx=[],hp=100,t=45,sp=0,cd=0,combo=0,fl=0,fc='',kl=0,kr=0,run=0,last=0,bossed=0,k={k:0,s:0,f:0,m:0};
- const fire=()=>{if(run&&cd<=0){bul.push({x:ship,y:H-34});cd=.18;SFX.tone(880,.05,'square',.03,0,440)}};
- const boom=(x,y,c,n=12)=>{for(let i=0;i<n;i++)pt.push({x,y,vx:R(-140,140),vy:R(-140,140),l:.5,c})};
+ let ship=W/2,shipBank=0,priorShip=W/2,bul=[],it=[],pt=[],tx=[],rings=[],hp=100,t=45,sp=0,cd=0,combo=0,fl=0,fc='',kl=0,kr=0,run=0,last=0,bossed=0,k={k:0,s:0,f:0,m:0};
+ function resizeArena(){
+  const mobile=innerWidth<=600&&innerHeight>innerWidth,arena=el.querySelector('.firewall-arena'),foot=el.querySelector('.firewall-arena-foot'),stage=el.closest('#stage');
+  const nextW=mobile?420:800,nextH=mobile?Math.max(420,Math.floor(nextW*(stage.clientHeight-foot.offsetHeight-4)/Math.max(1,arena.clientWidth))):450;
+  if(nextW===W&&nextH===H)return;
+  const sx=nextW/W,sy=nextH/H;ship*=sx;priorShip*=sx;
+  bul.forEach(o=>{o.x*=sx;o.y*=sy});it.forEach(o=>{o.x*=sx;o.y*=sy;if(o.vx)o.vx*=sx});
+  for(const list of [pt,tx,rings])list.forEach(o=>{o.x*=sx;o.y*=sy});
+  W=nextW;H=nextH;portrait=mobile;cv.width=W;cv.height=H
+ }
+ const threatDeck=[],safeDeck=[],recent=[];
+ function nextSignal(pool,deck){
+  if(!deck.length)deck.push(...pool.map((_,i)=>i));
+  const fresh=deck.filter(i=>!recent.includes(pool[i][0])),choices=fresh.length?fresh:deck;
+  const id=choices[Math.floor(Math.random()*choices.length)];deck.splice(deck.indexOf(id),1);
+  recent.push(pool[id][0]);if(recent.length>8)recent.shift();return pool[id]
+ }
+ const fire=()=>{if(run&&cd<=0){bul.push({x:ship,y:H-63});cd=.18;SFX.tone(880,.05,'square',.03,0,440)}};
+ const boom=(x,y,c,n=12)=>{rings.push({x,y,r:5,l:.38,c});for(let i=0;i<n;i++)pt.push({x,y,vx:R(-140,140),vy:R(-140,140),l:.5,c})};
  const say=(x,y,s,c)=>tx.push({x,y,s,c,l:1});
- const px=e=>{const r=cv.getBoundingClientRect();return Math.max(14,Math.min(W-14,(e.clientX-r.left)*W/r.width))};
+ const px=e=>{const r=cv.getBoundingClientRect();return Math.max(34,Math.min(W-34,(e.clientX-r.left)*W/r.width))};
  cv.onpointermove=e=>{ship=px(e)};cv.onpointerdown=e=>{ship=px(e);fire()};
  const kd=e=>{if(!run)return;if(e.key=='ArrowLeft')kl=1;if(e.key=='ArrowRight')kr=1;if(e.key==' '){e.preventDefault();fire()}};
  const ku=e=>{if(e.key=='ArrowLeft')kl=0;if(e.key=='ArrowRight')kr=0};
  document.addEventListener('keydown',kd);document.addEventListener('keyup',ku);
- function spawn(){g.font=F;const bad=Math.random()<.62,a=bad?TH:OK,e=a[Math.floor(R(0,a.length))];
-  it.push({x:0,y:-16,w:g.measureText(e[0]).width+20,h:26,v:R(55,85)+(45-t)*1.6,bad,l:e[0],tip:e[1]});const i=it[it.length-1];i.x=R(i.w/2+4,W-i.w/2-4)}
+ function spawn(){
+  const bad=Math.random()<.62,e=bad?nextSignal(TH,threatDeck):nextSignal(OK,safeDeck),kind=bad?e[2]:'safe',virus=kind==='virus';
+  // Angular warning frames distinguish threats; trusted traffic has a soft frame.
+  // Labels and icons repeat the distinction without relying on color alone.
+  const shape=virus?Math.floor(R(0,3)):bad?{credential:1,phish:2,risk:3}[kind]:0;
+  g.font=`700 ${portrait?15:14}px "JetBrains Mono",monospace`;
+  const w=virus?140:Math.max(shape===2?176:154,g.measureText(e[0]).width+72),h=virus?118:shape===2?60:shape===3?58:54;
+  it.push({x:0,y:-h/2-12,w,h,v:R(40,58)+(45-t)*.65,bad,kind,l:e[0],tip:e[1],shape});
+  const i=it[it.length-1];i.x=R(i.w/2+4,W-i.w/2-4)
+ }
  function update(dt){
-  t-=dt;cd-=dt;fl-=dt;ship=Math.max(14,Math.min(W-14,ship+(kr-kl)*380*dt));
-  if(t<=12&&!bossed){bossed=1;it.push({boss:1,x:W/2,y:50,w:170,h:34,hp:6,vx:90,bad:1,l:'RANSOMWARE',tip:'ransomware'});say(W/2,120,'BOSS INCOMING','#ef4444')}
-  sp-=dt;if(sp<=0&&t>3){spawn();sp=Math.max(.5,1.1-(45-t)*.012)}
-  bul.forEach(b=>b.y-=520*dt);bul=bul.filter(b=>b.y>-10);
-  it.forEach(i=>{if(i.boss){i.x+=i.vx*dt;if(i.x<i.w/2||i.x>W-i.w/2)i.vx*=-1;i.y+=28*dt}else i.y+=i.v*dt});
+  t-=dt;cd-=dt;fl-=dt;ship=Math.max(34,Math.min(W-34,ship+(kr-kl)*500*dt));
+  if(t<=12&&!bossed){bossed=1;it.push({boss:1,x:W/2,y:88,w:176,h:128,hp:6,vx:65,bad:1,kind:'virus',l:'RANSOMWARE',tip:'ransomware'});say(W/2,168,'RANSOMWARE INBOUND','#ff708d')}
+  sp-=dt;if(sp<=0&&t>3){spawn();sp=Math.max(1.1,1.65-(45-t)*.012)}
+  bul.forEach(b=>b.y-=520*(H/450)*dt);bul=bul.filter(b=>b.y>-10);
+  it.forEach(i=>{if(i.boss){i.x+=i.vx*dt;if(i.x<i.w/2||i.x>W-i.w/2)i.vx*=-1;i.y+=(H-124)/12.5*dt}else i.y+=i.v*(H/450)*dt});
   bul.forEach(b=>it.forEach(i=>{if(b.dead||i.dead)return;if(Math.abs(b.x-i.x)<i.w/2&&Math.abs(b.y-i.y)<i.h/2+6){b.dead=1;
-   if(i.boss){i.hp--;boom(b.x,b.y,'#ffb800',5);if(i.hp<=0){i.dead=1;k.k++;boom(i.x,i.y,'#10b981',30);ctx.add(100,'boss down');say(i.x,i.y,'Ransomware stopped. Back up!','#10b981')}}
-   else if(i.bad){i.dead=1;k.k++;combo++;boom(i.x,i.y,'#10b981');SFX.tone(520,.09,'square',.05,0,1040);ctx.add(20+5*Math.min(combo-1,4),combo>1?'combo x'+combo:'');say(i.x,i.y,i.tip,'#10b981')}
+   if(i.boss){i.hp--;boom(b.x,b.y,'#ffb800',8);if(i.hp<=0){i.dead=1;k.k++;boom(i.x,i.y,'#baf263',36);ctx.add(100,'boss down');say(i.x,i.y,'RANSOMWARE STOPPED · BACK UP!','#baf263')}}
+   else if(i.bad){i.dead=1;k.k++;combo++;boom(i.x,i.y,'#baf263',16);SFX.tone(520,.09,'square',.05,0,1040);ctx.add(20+5*Math.min(combo-1,4),combo>1?'combo x'+combo:'');say(i.x,i.y,i.kind==='virus'?'VIRUS QUARANTINED':i.tip.toUpperCase()+' BLOCKED','#baf263')}
    else{i.dead=1;k.f++;combo=0;boom(i.x,i.y,'#ef4444');fl=.2;fc='#ef4444';SFX.bad();ctx.add(-50,'friendly fire');say(i.x,i.y,'That was '+i.tip+'!','#ef4444')}}}));
   bul=bul.filter(b=>!b.dead);
   it.forEach(i=>{if(i.dead||i.y<H-36)return;i.dead=1;
@@ -320,28 +398,98 @@ function shoot(el,ctx){
    else if(i.bad){hp-=20;k.m++;combo=0;fl=.25;fc='#ef4444';SFX.bad();ctx.add(-25,'breach');say(i.x,H-50,i.tip+' got in','#ef4444')}
    else{k.s++;ctx.add(10,'secured');say(i.x,H-50,i.tip+' ok','#94a3b8')}});
   it=it.filter(i=>!i.dead);
-  pt.forEach(p=>{p.x+=p.vx*dt;p.y+=p.vy*dt;p.l-=dt});pt=pt.filter(p=>p.l>0);tx.forEach(s=>{s.y-=24*dt;s.l-=dt});tx=tx.filter(s=>s.l>0);
+  pt.forEach(p=>{p.x+=p.vx*dt;p.y+=p.vy*dt;p.l-=dt});pt=pt.filter(p=>p.l>0);rings.forEach(r=>{r.r+=130*dt;r.l-=dt});rings=rings.filter(r=>r.l>0);tx.forEach(s=>{s.y-=24*dt;s.l-=dt});tx=tx.filter(s=>s.l>0);
   if(hp<=0||t<=0)end()}
+ function virusGlyph(x,y,r,boss=false,shape=0){
+  const phase=(45-t)*2.4+x*.012;
+  g.save();g.translate(x,y);g.rotate(Math.sin(phase)*.08);g.shadowColor=boss?'#d95d9c':'#ff688a';g.shadowBlur=boss?30:19;
+  g.fillStyle=boss?'#7b2346':'#9f3558';
+  const spikes=boss||shape===0?12:shape===1?6:8;for(let n=0;n<spikes;n++){const a=n*Math.PI*2/spikes+phase*.11;g.beginPath();g.moveTo(Math.cos(a-.17)*r,Math.sin(a-.17)*r);g.lineTo(Math.cos(a)*(r+11),Math.sin(a)*(r+11));g.lineTo(Math.cos(a+.17)*r,Math.sin(a+.17)*r);g.closePath();g.fill()}
+  const skin=g.createRadialGradient(-r*.4,-r*.5,2,0,0,r*1.2);skin.addColorStop(0,boss?'#f17697':'#ff9aab');skin.addColorStop(.55,boss?'#9f2b5c':'#c64a70');skin.addColorStop(1,boss?'#351a42':'#47192e');g.fillStyle=skin;g.beginPath();
+  if(!boss&&shape===1){for(let n=0;n<6;n++){const a=n*Math.PI/3-Math.PI/2;n?g.lineTo(Math.cos(a)*r,Math.sin(a)*r):g.moveTo(Math.cos(a)*r,Math.sin(a)*r)}g.closePath()}
+  else if(!boss&&shape===2){g.moveTo(-r,-r*.7);g.lineTo(-r*.55,-r);g.lineTo(r*.55,-r);g.lineTo(r,-r*.7);g.lineTo(r,r*.7);g.lineTo(r*.55,r);g.lineTo(-r*.55,r);g.lineTo(-r,r*.7);g.closePath()}
+  else g.arc(0,0,r,0,Math.PI*2);
+  g.fill();g.shadowBlur=0;g.strokeStyle=boss?'#f7a3bd':'#ffc3cf';g.lineWidth=2;g.stroke();
+  g.strokeStyle='#421229';g.lineWidth=boss?5:3;g.lineCap='round';
+  g.beginPath();g.moveTo(-r*.67,-r*.35);g.lineTo(-r*.1,-r*.12);g.moveTo(r*.67,-r*.35);g.lineTo(r*.1,-r*.12);g.stroke();
+  g.fillStyle='#290d21';g.beginPath();g.moveTo(-r*.52,-r*.05);g.lineTo(-r*.12,r*.06);g.lineTo(-r*.48,r*.21);g.moveTo(r*.52,-r*.05);g.lineTo(r*.12,r*.06);g.lineTo(r*.48,r*.21);g.fill();
+  g.fillStyle='#fff0ba';g.beginPath();g.arc(-r*.34,r*.06,boss?3:2,0,Math.PI*2);g.arc(r*.34,r*.06,boss?3:2,0,Math.PI*2);g.fill();
+  g.fillStyle='#300d26';g.beginPath();g.moveTo(-r*.46,r*.43);g.quadraticCurveTo(0,r*.22,r*.46,r*.43);g.lineTo(r*.35,r*.72);g.lineTo(r*.18,r*.53);g.lineTo(0,r*.76);g.lineTo(-r*.18,r*.53);g.lineTo(-r*.35,r*.72);g.closePath();g.fill();
+  g.strokeStyle='#ffd1dd';g.lineWidth=1.5;g.stroke();
+  if(boss){g.strokeStyle='#ffb9d0';g.lineWidth=3;g.beginPath();g.moveTo(-r*.8,-r*.58);g.lineTo(-r*.53,-r*1.28);g.lineTo(-r*.17,-r*.79);g.moveTo(r*.8,-r*.58);g.lineTo(r*.53,-r*1.28);g.lineTo(r*.17,-r*.79);g.stroke()}
+  g.restore()
+ }
+ function packet(i){
+  // Shape, icon, and color reinforce the plain-language label.
+  const left=i.x-i.w/2,right=left+i.w,top=i.y-i.h/2,bottom=i.y+i.h/2;
+  const edge=i.bad?i.kind==='credential'?'#ffad8b':i.kind==='phish'?'#f596c7':'#f2c875':'#87e4d0';
+  const fill=i.bad?i.kind==='risk'?'#3d302d':'#402638':'#20383e';
+  g.save();g.shadowColor=edge;g.shadowBlur=12;g.fillStyle=fill;g.strokeStyle=edge;g.lineWidth=2;g.beginPath();
+  if(i.shape===1){g.moveTo(left+14,top);g.lineTo(right-14,top);g.lineTo(right,top+14);g.lineTo(right,bottom-14);g.lineTo(right-14,bottom);g.lineTo(left+14,bottom);g.lineTo(left,bottom-14);g.lineTo(left,top+14);g.closePath()}
+  else if(i.shape===2){g.moveTo(left+25,top);g.lineTo(right-25,top);g.lineTo(right,i.y);g.lineTo(right-25,bottom);g.lineTo(left+25,bottom);g.lineTo(left,i.y);g.closePath()}
+  else if(i.shape===3){g.moveTo(left+9,top);g.lineTo(right-28,top);g.lineTo(right,top+18);g.lineTo(right-10,bottom-7);g.lineTo(right-28,bottom);g.lineTo(left+12,bottom);g.lineTo(left,bottom-12);g.lineTo(left,top+10);g.closePath()}
+  else g.roundRect(left,top,i.w,i.h,10);
+  g.fill();g.stroke();g.shadowBlur=0;
+  g.strokeStyle=edge;g.globalAlpha=.55;g.beginPath();g.moveTo(left+40,top+8);g.lineTo(left+40,bottom-8);g.stroke();g.globalAlpha=1;
+  g.strokeStyle=edge;g.lineWidth=2;g.beginPath();
+  if(i.bad){g.moveTo(left+22,i.y-12);g.lineTo(left+33,i.y+10);g.lineTo(left+11,i.y+10);g.closePath();g.stroke();g.beginPath();g.moveTo(left+22,i.y-5);g.lineTo(left+22,i.y+2);g.stroke();g.fillStyle=edge;g.beginPath();g.arc(left+22,i.y+6,1.5,0,Math.PI*2);g.fill()}
+  else{g.arc(left+22,i.y,12,0,Math.PI*2);g.stroke();g.beginPath();g.moveTo(left+16,i.y);g.lineTo(left+21,i.y+5);g.lineTo(left+29,i.y-5);g.stroke()}
+  g.font=`700 ${portrait?15:14}px "JetBrains Mono",monospace`;g.textAlign='left';g.fillStyle='#faf7ff';g.fillText(i.l,left+51,i.y+1);g.restore()
+ }
+ function shipGlyph(){
+  const drift=Math.max(-.22,Math.min(.22,(ship-priorShip)*.013+(kr-kl)*.08));shipBank+=(drift-shipBank)*.2;priorShip=ship;
+  const flame=15+Math.sin(performance.now()*.03)*4;
+  g.save();g.translate(ship,H-28);g.rotate(shipBank);
+  const aura=g.createRadialGradient(0,6,3,0,6,43);aura.addColorStop(0,'#baf26377');aura.addColorStop(1,'#baf26300');g.fillStyle=aura;g.beginPath();g.arc(0,6,43,0,Math.PI*2);g.fill();
+  for(const side of [-1,1]){const engine=g.createLinearGradient(0,11,0,31);engine.addColorStop(0,'#f5ffd4');engine.addColorStop(.42,'#baf263');engine.addColorStop(1,'#a065ef00');g.fillStyle=engine;g.beginPath();g.moveTo(side*8,12);g.lineTo(side*12,12+flame);g.lineTo(side*16,12);g.closePath();g.fill()}
+  g.shadowColor='#ad82f2';g.shadowBlur=19;g.fillStyle='#392b58';g.strokeStyle='#c7a9f3';g.lineWidth=2;g.beginPath();g.moveTo(0,-31);g.lineTo(10,-15);g.lineTo(28,9);g.lineTo(30,18);g.lineTo(10,10);g.lineTo(0,17);g.lineTo(-10,10);g.lineTo(-30,18);g.lineTo(-28,9);g.lineTo(-10,-15);g.closePath();g.fill();g.stroke();g.shadowBlur=0;
+  g.fillStyle='#7650aa';g.beginPath();g.moveTo(0,-27);g.lineTo(8,-10);g.lineTo(19,8);g.lineTo(8,4);g.lineTo(0,13);g.lineTo(-8,4);g.lineTo(-19,8);g.lineTo(-8,-10);g.closePath();g.fill();
+  g.strokeStyle='#baf263';g.lineWidth=2;g.beginPath();g.moveTo(-25,11);g.lineTo(-14,7);g.moveTo(25,11);g.lineTo(14,7);g.stroke();
+  g.fillStyle='#d5e5ff';g.beginPath();g.ellipse(0,-10,5,11,0,0,Math.PI*2);g.fill();g.fillStyle='#baf263';g.beginPath();g.ellipse(0,-11,3,7,0,0,Math.PI*2);g.fill();
+  g.fillStyle='#e2c9ff';g.beginPath();g.arc(0,-28,2.5,0,Math.PI*2);g.fill();
+  if(cd>.12){g.fillStyle='#edffd3';g.shadowColor='#baf263';g.shadowBlur=18;g.beginPath();g.arc(0,-37,5,0,Math.PI*2);g.fill()}
+  g.restore()
+ }
  function draw(){
-  g.fillStyle='#0b0c0e';g.fillRect(0,0,W,H);g.fillStyle='rgba(255,255,255,.06)';for(let x=0;x<W;x+=32)for(let y=0;y<H;y+=32)g.fillRect(x,y,2,2);
-  g.setLineDash([8,6]);g.strokeStyle='#ffb800';g.lineWidth=2;g.beginPath();g.moveTo(0,H-36);g.lineTo(W,H-36);g.stroke();g.setLineDash([]);
+  const sky=g.createLinearGradient(0,0,0,H);sky.addColorStop(0,'#171326');sky.addColorStop(.55,'#141429');sky.addColorStop(1,'#091824');g.fillStyle=sky;g.fillRect(0,0,W,H);
+  g.strokeStyle='#aa88d220';g.lineWidth=1;for(let x=-W;x<W*2;x+=64){g.beginPath();g.moveTo(W/2+(x-W/2)*.28,0);g.lineTo(x,H);g.stroke()}for(let y=0;y<H;y+=46){const yy=(y+(45-t)*15)%H;g.beginPath();g.moveTo(0,yy);g.lineTo(W,yy);g.stroke()}
+  for(let j=0;j<32;j++){g.fillStyle=j%4?'#bda6e856':'#baf263aa';g.fillRect((j*139)%W,(j*71+(45-t)*(j%3+1)*8)%H,2,2)}
+  g.strokeStyle='#ad83ec24';g.lineWidth=2;for(let side=0;side<2;side++){const x=side?W-23:23;g.beginPath();g.moveTo(x,55);g.lineTo(x,H-105);g.lineTo(side?W-43:43,H-85);g.stroke();for(let y=85;y<H-85;y+=70){g.fillStyle='#ad83ec66';g.beginPath();g.arc(x,y,3,0,Math.PI*2);g.fill()}}
+  const glow=g.createLinearGradient(0,H-95,0,H);glow.addColorStop(0,'#baf26300');glow.addColorStop(1,hp>40?'#baf26338':'#ff607344');g.fillStyle=glow;g.fillRect(0,H-95,W,95);
+  const wave=t>30?'01':t>12?'02':'03';
+  g.setLineDash([8,6]);g.strokeStyle=hp>40?'#baf263':'#ff708d';g.lineWidth=3;g.shadowColor=g.strokeStyle;g.shadowBlur=13;g.beginPath();g.moveTo(0,H-42);g.lineTo(W,H-42);g.stroke();g.shadowBlur=0;g.setLineDash([]);
   g.font=F;g.textAlign='center';g.textBaseline='middle';
-  it.forEach(i=>{g.fillStyle=i.boss?'#93000a':'#181920';g.fillRect(i.x-i.w/2,i.y-i.h/2,i.w,i.h);g.strokeStyle=i.boss?'#ef4444':'#3d4152';g.lineWidth=1;g.strokeRect(i.x-i.w/2+.5,i.y-i.h/2+.5,i.w-1,i.h-1);g.fillStyle='#f8fafc';g.fillText(i.l,i.x,i.y+1);
-   if(i.boss){g.fillStyle='#ef4444';g.fillRect(i.x-i.w/2,i.y+i.h/2+4,i.w*i.hp/6,5)}});
-  g.fillStyle='#ffb800';bul.forEach(b=>g.fillRect(b.x-2,b.y-8,4,12));
-  g.fillStyle='#ffb800';g.beginPath();g.moveTo(ship,H-40);g.lineTo(ship+14,H-12);g.lineTo(ship-14,H-12);g.fill();g.fillStyle='#ffdca1';g.fillRect(ship-3,H-24,6,8);
+  it.forEach(i=>{if(i.kind==='virus'){
+   if(i.boss){g.strokeStyle='#ff799560';g.lineWidth=2;g.beginPath();g.arc(i.x,i.y,51+Math.sin((45-t)*5)*3,0,Math.PI*2);g.stroke()}virusGlyph(i.x,i.y,i.boss?39:27,!!i.boss,i.shape);
+   g.fillStyle='#24152d';g.strokeStyle='#ff7794';g.lineWidth=2;g.beginPath();g.roundRect(i.x-(i.boss?73:70),i.y+(i.boss?43:35),i.boss?146:140,i.boss?20:24,6);g.fill();g.stroke();g.fillStyle='#ffe7ed';g.font=i.boss?'700 11px "JetBrains Mono",monospace':`700 ${portrait?13:12}px "JetBrains Mono",monospace`;g.fillText(i.l,i.x,i.y+(i.boss?53:47));g.font=F;
+   if(i.boss){g.fillStyle='#4b2b43';g.fillRect(i.x-65,i.y+69,130,5);g.fillStyle='#ff708d';g.fillRect(i.x-65,i.y+69,130*i.hp/6,5)}
+  }else packet(i)});
+  g.shadowColor='#baf263';g.shadowBlur=15;g.fillStyle='#e5ffae';bul.forEach(b=>{g.beginPath();g.roundRect(b.x-3,b.y-13,6,21,3);g.fill()});g.shadowBlur=0;
+  shipGlyph();
+  rings.forEach(r=>{g.globalAlpha=Math.min(1,r.l*2.5);g.strokeStyle=r.c;g.lineWidth=3;g.beginPath();g.arc(r.x,r.y,r.r,0,Math.PI*2);g.stroke();g.globalAlpha=1});
   pt.forEach(p=>{g.fillStyle=p.c;g.fillRect(p.x,p.y,4,4)});
-  tx.forEach(s=>{g.globalAlpha=Math.min(1,s.l*2);g.fillStyle=s.c;g.fillText(s.s,Math.max(80,Math.min(W-80,s.x)),s.y);g.globalAlpha=1});
-  if(fl>0){g.fillStyle=fc;g.globalAlpha=.25;g.fillRect(0,0,W,H);g.globalAlpha=1}
-  g.fillStyle='#181920';g.fillRect(0,0,W,26);g.textAlign='left';g.fillStyle='#94a3b8';g.fillText('FIREWALL',8,14);g.fillStyle='#323542';g.fillRect(76,8,100,10);g.fillStyle=hp>40?'#10b981':'#ef4444';g.fillRect(76,8,Math.max(0,hp),10);
-  g.textAlign='center';g.fillStyle='#ffb800';g.fillText('00:'+String(Math.max(0,Math.ceil(t))).padStart(2,'0'),W/2,14);g.textAlign='right';g.fillStyle='#f8fafc';g.fillText((combo>1?'COMBO x'+combo+'  ':'')+'PTS '+S.lp,W-8,14)}
- function tick(now){if(cv.dataset.x)return;if(!cv.isConnected){document.removeEventListener('keydown',kd);document.removeEventListener('keyup',ku);return}
+  g.font=F;g.textAlign='center';tx.forEach(s=>{g.globalAlpha=Math.min(1,s.l*2);g.fillStyle=s.c;g.fillText(s.s,Math.max(125,Math.min(W-125,s.x)),s.y);g.globalAlpha=1});
+  if(fl>0){g.fillStyle=fc;g.globalAlpha=.2;g.fillRect(0,0,W,H);g.globalAlpha=1}
+  // Portrait phones get a two-row HUD so the readouts stay legible.
+  const hud=portrait?58:36;
+  g.fillStyle='#130f1ef0';g.fillRect(0,0,W,hud);g.strokeStyle='#765c9755';g.beginPath();g.moveTo(0,hud-.5);g.lineTo(W,hud-.5);g.stroke();
+  g.font=`700 ${portrait?13:12}px "JetBrains Mono",monospace`;g.textBaseline='middle';g.textAlign='left';g.fillStyle=hp>40?'#baf263':'#ff708d';g.fillText('INTEGRITY '+Math.max(0,hp)+'%',portrait?12:14,portrait?16:15);
+  if(portrait){
+   g.textAlign='right';g.fillStyle='#e2d4f0';g.fillText('TIME 00:'+String(Math.max(0,Math.ceil(t))).padStart(2,'0'),W-12,16);
+   g.fillStyle='#473450';g.fillRect(12,29,W-24,4);g.fillStyle=hp>40?'#baf263':'#ff708d';g.fillRect(12,29,(W-24)*Math.max(0,hp)/100,4);
+   g.textAlign='left';g.fillStyle='#e2d4f0';g.fillText('WAVE '+wave+' / 03',12,46);g.textAlign='right';g.fillStyle='#baf263';g.fillText('SCORE '+S.lp,W-12,46)
+  }else{
+   g.fillStyle='#473450';g.fillRect(14,27,162,4);g.fillStyle=hp>40?'#baf263':'#ff708d';g.fillRect(14,27,162*Math.max(0,hp)/100,4);
+   g.fillStyle='#e2d4f0';g.fillText('WAVE '+wave+' / 03',235,18);g.fillText('TIME 00:'+String(Math.max(0,Math.ceil(t))).padStart(2,'0'),390,18);g.textAlign='right';g.fillStyle='#baf263';g.fillText('SCORE '+S.lp,W-14,18)
+  }
+ }
+ function tick(now){if(cv.dataset.x)return;if(!cv.isConnected){document.removeEventListener('keydown',kd);document.removeEventListener('keyup',ku);window.removeEventListener('resize',resizeArena);return}
   const dt=Math.min(.05,(now-last)/1000);last=now;if(run)update(dt);draw();requestAnimationFrame(tick)}
- function end(){run=0;cv.dataset.x=1;document.removeEventListener('keydown',kd);document.removeEventListener('keyup',ku);const held=hp>0,b=held?Math.round(hp/2):0;SFX[held?'win':'lose']();if(b)ctx.add(b,'firewall bonus');
-  cv.style.display='none';gb.style.display='';gb.innerHTML=`<div class="cart-h"><span class="lbl">Firewall report</span><span class="chip"><i class="led ${held?'g':'r'}"></i>${held?'Firewall held':'Breached'}</span></div>
+ function end(){run=0;cv.dataset.x=1;leaveFirewallScreen();document.removeEventListener('keydown',kd);document.removeEventListener('keyup',ku);window.removeEventListener('resize',resizeArena);const held=hp>0,b=held?Math.round(hp/2):0;SFX[held?'win':'lose']();if(b)ctx.add(b,'firewall bonus');
+  cv.style.display='none';el.querySelector('.firewall-arena').hidden=true;gb.style.display='';gb.innerHTML=`<div class="cart-h"><span class="lbl">Firewall report</span><span class="chip"><i class="led ${held?'g':'r'}"></i>${held?'Firewall held':'Breached'}</span></div>
   <h2>${held?'Firewall held':'Firewall breached'}</h2><div class="grid" style="margin:14px 0"><div class="inset"><div class="lbl">Threats stopped</div><div class="big">${k.k}</div></div><div class="inset"><div class="lbl">Breaches</div><div class="big red">${k.m}</div></div><div class="inset"><div class="lbl">Safe items shot</div><div class="big red">${k.f}</div></div><div class="inset"><div class="lbl">Safe items passed</div><div class="big">${k.s}</div></div></div>
-  <p class="mut">Remember: weak passwords like 123456 fall in seconds, so use long passphrases. Never open unknown .exe files or shortened links. Keep MFA, updates and backups on.</p><button class="btn" id="fin2">Continue to quiz</button>`;$('#fin2').onclick=()=>ctx.done()}
- $('#st0').onclick=()=>{gb.style.display='none';cv.style.display='block';run=1;last=performance.now();requestAnimationFrame(tick)}}
+  <p class="mut">Remember: use unique passphrases and MFA. Verify unexpected sign-in requests, links, QR codes and support calls. Avoid unknown files, keep devices updated and share sensitive files only with the right people.</p><button class="btn" id="fin2">Continue to quiz</button>`;$('#fin2').onclick=()=>ctx.done()}
+ $('#st0').onclick=()=>{gb.style.display='none';el.querySelector('.firewall-arena').hidden=false;cv.style.display='block';dailyActive=true;dailyLast=Date.now();dailyPaint();enterFirewallScreen();resizeArena();window.addEventListener('resize',resizeArena);cv.focus();run=1;last=performance.now();requestAnimationFrame(tick)}}
 /* ---------- game 3: desk inspector (case files) ---------- */
 const R=(x,y,w,h,f,s)=>`<rect x="${x}" y="${y}" width="${w}" height="${h}" fill="${f}"${s?` stroke="${s}"`:''}/>`,
 T=(x,y,s,f,z,a)=>`<text x="${x}" y="${y}" fill="${f||'#f8fafc'}" font-size="${z||9}" text-anchor="${a||'middle'}" font-family="JetBrains Mono,monospace" font-weight="700">${s}</text>`;
@@ -365,7 +513,7 @@ function sceneRecep(){
  ['disp',0,'Water dispenser',[436,404,42,78],R(440,410,34,70,'#e5e7eb','#94a3b8')+R(444,414,26,24,'#93c5fd'),'A water dispenser. Harmless.'],
  ['plant',0,'Plant',[698,400,50,78],PLANT(702,402),'A plant. Harmless.']];
  const BG=R(0,0,800,520,'#1b1f2b')+FLOOR+R(30,120,90,280,'#263044','#4d5778')+R(122,240,12,24,'#0b0c0e','#3d4152')+'<rect class="blink" x="125" y="244" width="6" height="6" fill="#10b981"/>'+T(75,108,'STAFF ONLY','#94a3b8',9)+R(630,110,150,290,'#263044','#4d5778')+R(638,120,134,200,'#2d3b57')+T(705,100,'ENTRANCE','#94a3b8',9)+R(130,300,430,20,'#8a7660')+R(130,320,430,80,'#5b4b3c')+R(140,330,410,60,'#4a3d30');
- return {id:'recep',cn:'Case #0418',name:'Reception desk',sub:'The front desk is empty while the receptionist is on a break.',intro:'The receptionist has stepped out for a break. Check the lobby for anything a visitor or an attacker could use.',T0:70,I,BG}}
+ return {id:'recep',cn:'Case #0418',name:'Reception desk',sub:'The front desk is empty while the receptionist is on a break.',intro:'The receptionist has stepped out for a break. Check the lobby for anything a visitor or an attacker could use.',T0:180,I,BG}}
 function sceneMeet(){
  const I=[
  ['proj',1,'Projector still showing the confidential acquisition deck',[240,50,320,150],R(240,50,320,150,'#e5e7eb','#94a3b8')+R(248,58,304,134,'#12324a')+T(400,100,'Q4 ACQUISITION PLAN','#f8fafc',18)+T(400,124,'CONFIDENTIAL','#ef4444',14)+T(400,150,'Target: Acme Corp | Offer: ₹86 Cr','#ffb800',9)+T(400,168,'Board approval: pending','#94a3b8',8),'When the meeting ends, stop sharing and switch the projector off. Anyone walking past can read the screen.'],
@@ -383,7 +531,7 @@ function sceneMeet(){
  ['bin',1,'Meeting notes in an open paper bin',[100,402,66,74],R(104,430,50,44,'#2b3040','#3d4152')+R(110,414,14,20,'#f1f5f9')+R(124,410,24,22,'#f1f5f9')+T(136,424,'NOTES','#ef4444',5),'Notes with client or plan details belong in the shredder, not an open bin.'],
  ['plant',0,'Plant',[690,396,52,80],PLANT(694,402),'A plant. Harmless.']];
  const BG=R(0,0,800,520,'#1b1f2b')+FLOOR+R(200,10,400,8,'#323542')+R(150,254,40,46,'#2b3040')+R(300,254,40,46,'#2b3040')+R(440,254,40,46,'#2b3040')+R(590,254,40,46,'#2b3040')+R(100,300,600,16,'#8a7660')+R(100,316,600,18,'#5b4b3c')+R(130,334,12,66,'#3a4256')+R(658,334,12,66,'#3a4256');
- return {id:'meet',cn:'Case #0419',name:'Meeting room B',sub:'A confidential board meeting just ended and everyone left in a hurry.',intro:'A confidential board meeting just ended in Meeting room B and everyone left in a rush. Check what they left behind.',T0:70,I,BG}}
+ return {id:'meet',cn:'Case #0419',name:'Meeting room B',sub:'A confidential board meeting just ended and everyone left in a hurry.',intro:'A confidential board meeting just ended in Meeting room B and everyone left in a rush. Check what they left behind.',T0:180,I,BG}}
 function sceneHome(){
  const I=[
  ['books',0,'Bookshelf',[596,86,170,176],R(600,90,160,170,'#5b4b3c')+R(606,96,148,70,'#2b3040')+R(606,176,148,70,'#2b3040')+R(610,108,10,58,'#ef4444')+R(622,112,10,54,'#3b82f6')+R(634,106,10,60,'#10b981')+R(646,114,10,52,'#ffb800')+R(612,188,10,58,'#93c5fd')+R(624,192,10,54,'#f8fafc')+R(636,186,10,60,'#ef4444'),'Books. Harmless.'],
@@ -402,11 +550,11 @@ function sceneHome(){
  ['plant',0,'Plant',[700,396,52,80],PLANT(704,402),'A plant. Harmless.'],
  ['cat',0,'Cat',[566,424,104,48],R(570,440,44,26,'#f59e0b')+R(606,430,22,22,'#f59e0b')+R(606,424,6,8,'#f59e0b')+R(622,424,6,8,'#f59e0b'),'A cat. Harmless.']];
  const BG=R(0,0,800,520,'#1b1f2b')+R(0,395,800,125,'#2a2530')+'<path d="M0 440H800M0 485H800" stroke="#1b1f2b"/>'+R(80,300,470,10,'#8a7660')+R(80,310,470,14,'#5b4b3c')+R(92,324,10,72,'#3a4256')+R(520,324,10,72,'#3a4256');
- return {id:'home',cn:'Case #0420',name:'Home office',sub:'Dev works from home on Fridays. Check the remote work setup.',intro:'Dev works from home on Fridays. Visit the home office and check the remote work setup.',T0:65,I,BG}}
+ return {id:'home',cn:'Case #0420',name:'Home office',sub:'Dev works from home on Fridays. Check the remote work setup.',intro:'Dev works from home on Fridays. Visit the home office and check the remote work setup.',T0:180,I,BG}}
 function desk(el,ctx){
  const SC=[sceneCube(),sceneRecep(),sceneMeet(),sceneHome()];S.cases=S.cases||{};
  function hub(){const n=Object.keys(S.cases).length,all=n==SC.length;
-  el.innerHTML=`<div class="panel"><div class="cart-h"><span class="lbl">Slot-03 // Case files</span><span class="chip"><i class="led ${all?'g':''}"></i>${n}/${SC.length} closed</span></div><h2>Desk inspector: case files</h2><p class="mut" style="max-width:64ch">Four sites need a security inspection. Close every case to finish the level. Closed cases can be replayed for practice, without points.</p>
+  el.innerHTML=`<div class="panel"><div class="cart-h"><span class="lbl">Slot-04 // Case files</span><span class="chip"><i class="led ${all?'g':''}"></i>${n}/${SC.length} closed</span></div><h2>Desk inspector: case files</h2><p class="mut" style="max-width:64ch">Four sites need a security inspection. Close every case to finish the level. Closed cases can be replayed for practice, without points.</p>
   <div class="grid" style="margin-top:14px;grid-template-columns:repeat(auto-fill,minmax(240px,1fr))">${SC.map((c,k)=>{const r=S.cases[c.id];return `<div class="inset"><div class="lbl">${c.cn}</div><h3 style="margin:6px 0">${c.name}</h3><div class="mut" style="min-height:40px">${c.sub}</div><div style="display:flex;gap:6px;flex-wrap:wrap;margin:8px 0 12px"><span class="chip">${c.I.filter(i=>i[1]).length} risks</span><span class="chip">${c.T0}s</span>${r?`<span class="chip mint">Grade ${r.g}</span>`:''}</div><button class="btn ${r?'sub':''}" data-c="${k}" style="width:100%;box-sizing:border-box">${r?'Practice (no points)':'Start inspection'}</button></div>`}).join('')}</div><br><button class="btn" id="fin" ${all?'':'disabled'}>${all?'Continue to quiz':'Close all cases to continue'}</button></div>`;
   el.querySelectorAll('[data-c]').forEach(b=>b.onclick=()=>{const c=SC[+b.dataset.c],pr=!!S.cases[c.id],b0=S.lp;inspect(el,pr?()=>{}:ctx.add,c,r=>{if(!pr){S.cases[c.id]={g:r.g,pts:Math.max(0,S.lp-b0)};save();if(SERVER)api('/me/cases','PUT',{cases:{[c.id]:S.cases[c.id]}}).catch(e=>toast(e.message,'#ef4444'))}hub()})});
   const f=$('#fin');if(f)f.onclick=()=>ctx.done()}
@@ -441,8 +589,14 @@ function sceneCube(){
  ['chair',0,'Office chair',[278,348,86,100],R(284,350,72,40,'#2b3040','#3d4152')+R(280,392,80,14,'#323542')+R(314,406,12,28,'#22242d')+R(288,434,64,6,'#22242d'),'Just a chair. Harmless.'],
  ['cactus',0,'Desk cactus',[550,292,22,30],R(554,308,14,12,'#7c4a2d')+R(558,294,6,16,'#10b981')+R(552,298,5,8,'#10b981')+R(565,298,5,8,'#10b981'),'A tiny cactus. Harmless.']];
  const BG=R(0,0,800,520,'#1b1f2b')+R(0,395,800,125,'#232838')+'<path d="M0 440H800M0 485H800M133 395V520M266 395V520M400 395V520M533 395V520M666 395V520" stroke="#1b1f2b"/><polygon points="40,84 90,60 90,392 40,430" fill="#2e3550"/><polygon points="560,60 590,76 590,410 560,392" fill="#2e3550"/>'+R(90,60,470,332,'#38405a')+R(90,52,470,10,'#4d5778')+R(590,40,210,360,'#202638')+R(610,110,160,290,'#263044','#4d5778')+R(618,120,144,200,'#2d3b57')+R(640,350,100,6,'#94a3b8')+R(594,240,12,24,'#0b0c0e','#3d4152')+'<rect class="blink" x="597" y="244" width="6" height="6" fill="#ef4444"/>'+T(690,100,'STAFF ONLY','#94a3b8',9)+R(80,318,490,8,'#8a7660')+R(80,326,490,12,'#5b4b3c')+R(92,338,10,60,'#3a4256')+R(440,338,110,60,'#2b3040','#3d4152')+R(446,342,98,16,'#323542')+R(446,362,98,16,'#323542')+R(446,382,98,12,'#323542')+R(284,290,12,22,'#22242d')+R(262,312,56,6,'#22242d')+R(212,300,130,10,'#22242d','#3d4152')+R(346,302,10,8,'#22242d');
- return {id:'cube',cn:'Case #0417',name:'Cubicle 12',sub:'Dev has gone to lunch and left the desk in a mess.',intro:'Dev has gone to lunch and left cubicle 12 a mess. You are the security inspector.',T0:100,I,BG}}
+ return {id:'cube',cn:'Case #0417',name:'Cubicle 12 · 3D',sub:'Explore a realistic 3D workstation. Dev has stepped away for lunch.',intro:'Dev has gone to lunch and left cubicle 12 a mess. You are the security inspector.',T0:180,I,BG}}
 function inspect(el,ad,sc,back){
+ if(!sc.flat){
+  el.innerHTML='<div class="panel"><h2>Preparing your 3D case file…</h2><p class="mut">Setting up the room, lighting and inspection tools.</p></div>';
+  import('/desk3d.mjs?v=__DESK3D_VERSION__').then(m=>{if(el.isConnected)m.mountCubicle(el,{items:sc.I,onScore:ad,onDone:back,caseFile:sc})}).catch(e=>{
+   if(!el.isConnected)return;console.error('3D cubicle unavailable',e);el.innerHTML='<div class="panel"><h2>3D view unavailable</h2><p>This browser could not start the 3D view. You can still complete the inspection in the illustrated version.</p><button class="btn" id="flat-desk">Open illustrated inspection</button></div>';el.querySelector('#flat-desk').onclick=()=>inspect(el,ad,{...sc,flat:true},back)
+  });return
+ }
  const I=sc.I,BG=sc.BG,risks=I.filter(i=>i[1]),T0=sc.T0;
  const grp=i=>{const h=i[3];return `<g data-i="${i[0]}" style="cursor:crosshair">${i[4]}<rect class="ol" x="${h[0]-3}" y="${h[1]-3}" width="${h[2]+6}" height="${h[3]+6}" fill="#000" fill-opacity="0" stroke="none" stroke-width="3"/></g>`};
  el.innerHTML=`<style>@keyframes pop{0%{transform:scale(2.2);opacity:0}60%{transform:scale(.92);opacity:1}100%{transform:scale(1)}}@keyframes spin{to{transform:rotate(360deg)}}@keyframes steam{0%{opacity:0;transform:translateY(4px)}50%{opacity:.8}100%{opacity:0;transform:translateY(-6px)}}@keyframes bl{50%{opacity:0}}@keyframes bob{50%{transform:translateY(-2px)}}@keyframes snap{from{opacity:.5}to{opacity:0}}
@@ -580,7 +734,7 @@ function voice(el,ctx){
  function fin(){SFX.duck(0);VOICE.stop();const G=ok==CALLS.length?'Hang-up hero':ok>=3?'Sharp ear':ok>=2?'Getting there':'Trainee';
   el.innerHTML=`<div class="panel"><div class="cart-h"><span class="lbl">Voice trap report</span><span class="chip"><i class="led ${ok>=3?'g':'r'}"></i>${ok}/${CALLS.length}</span></div><h1>${G}</h1><p class="mut">You handled ${ok} of ${CALLS.length} calls safely. Remember: verify through a channel you trust, and never share codes, PINs or passwords.</p><button class="btn" id="fv">Continue to quiz</button></div>`;$('#fv').onclick=()=>ctx.done()}
  intro()}
-/* ---------- game 5: data sorter (conveyor belt) ---------- */
+/* ---------- level 1: data sorter desk shift ---------- */
 /* [file name, preview text, class 0 Public / 1 Internal / 2 Confidential, why, owner] */
 const FILES=[
 ['press_release_launch.docx','Our new product launches Monday. Media enquiries: pr@innovatiview.com.',0,'Approved for release, so it is Public.','Marketing'],
@@ -607,46 +761,28 @@ const FILES=[
 ['bank_account_details.xlsx','Acct 4412 8890 3321 | vendor payments | approvers',2,'Bank details are Confidential.','Finance']];
 const EXC={docx:'#60a5fa',xlsx:'#34d399',pdf:'#f87171',csv:'#34d399',txt:'#94a3b8',zip:'#ffb800',png:'#c4b5fd',ovpn:'#94a3b8'};
 function sorter(el,ctx){
- const BN=[['Public','Anyone can see it','#10b981'],['Internal','Employees only','#ffb800'],['Confidential','Named people only','#ef4444']],T0=60;
- el.innerHTML=`<style>.bt{height:12px;margin:12px 0;background:repeating-linear-gradient(90deg,#323542 0 16px,#22242d 16px 32px);animation:bt .8s linear infinite}@keyframes bt{to{background-position:32px 0}}
- .doc{background:var(--sur);border:1px solid var(--rule);box-shadow:inset 0 1px 0 var(--hl),0 4px 0 #000;padding:16px;cursor:grab;touch-action:none;user-select:none;max-width:540px;margin:0 auto}
- .ext{width:52px;height:52px;display:grid;place-items:center;font:700 11px 'Space Grotesk';color:#0b0c0e;flex:none}
- .dlb{height:6px;background:#323542;margin-top:12px}.dlb b{display:block;height:100%;width:100%;background:#ffb800}
- .bins{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-top:16px}
- .bin{all:unset;cursor:pointer;text-align:center;padding:14px 6px;border:2px solid;background:var(--ink);box-shadow:0 3px 0 #000;box-sizing:border-box}.bin:active{transform:translateY(2px);box-shadow:0 1px 0 #000}.bin b{display:block;font:700 14px 'Space Mono'}.bin small{display:block;color:var(--mut);font-size:11px}.bin i{font:700 10px 'Space Grotesk';font-style:normal;color:var(--mut)}
- .qq{display:flex;gap:6px;justify-content:center;flex-wrap:wrap;min-height:24px}.qq span{font-size:10px;padding:2px 8px;border:1px solid var(--rule);color:var(--mut);background:var(--ink)}</style>
- <div class="panel" id="gb"><div class="cart-h"><span class="lbl">Slot-05 // Data sorter</span><span class="chip"><i class="led"></i>Standby</span></div><h2>Data sorter</h2>
- <p style="max-width:62ch">Files roll in on the conveyor belt. Read each preview and sort it into the right bin before it runs out of time. <b class="mint">Public</b> can be seen by anyone, <b class="amb">Internal</b> is for employees only, and <b class="red">Confidential</b> is for named people only.</p>
- <div style="display:flex;gap:8px;flex-wrap:wrap;margin:10px 0"><span class="chip mint">Correct +25 with combo</span><span class="chip red">Leak −20 or −40</span><span class="chip">Too strict −10</span><span class="chip red">Too slow −20</span></div>
- <p class="mut">Drag the file onto a bin, tap a bin, or press 1, 2 or 3. ${T0} seconds. Leaks damage the vault.</p><button class="btn" id="st0">Start sorting</button></div>
- <div id="sg" style="display:none"><div class="hint"><span class="lbl" id="hl"></span><span class="lbl" id="hr"></span></div>
- <div class="inset"><div class="qq" id="qq"></div><div class="bt"></div><div class="doc" id="doc"></div></div>
- <div class="bins">${BN.map((b,i)=>`<button class="bin" data-b="${i}" style="border-color:${b[2]};color:${b[2]}"><b>${b[0]}</b><small>${b[1]}</small><i>[${i+1}]</i></button>`).join('')}</div>
- <div class="fb" id="msg">Read the preview, then sort the file.</div><div id="sum"></div></div>`;
- let q=[],cur=null,t=T0,vault=100,combo=0,ok=0,mis=[],dl=0,dmax=0,iv,over=0,drag=0,sx=0,sy=0,tot=0;
- const shuf=()=>FILES.slice().sort(()=>Math.random()-.5),say=(h,c)=>{$('#msg').innerHTML=h;$('#msg').style.borderColor=c},
- hud=()=>{$('#hl').innerHTML=`Time <b class="amb">${Math.ceil(t)}s</b> &nbsp; Vault <b class="${vault>40?'mint':'red'}">${vault}%</b>`;$('#hr').innerHTML=(combo>1?`Combo x${combo} &nbsp; `:'')+`PTS ${S.lp}`};
- function nxt(){if(q.length<4)q=q.concat(shuf());cur=q.shift();dmax=Math.max(2.4,5.5-(T0-t)*.05);dl=dmax;tot++;const f=cur,x=f[0].split('.').pop();
-  $('#doc').innerHTML=`<div style="display:flex;gap:12px;align-items:center"><div class="ext" style="background:${EXC[x]||'#94a3b8'}">${x.toUpperCase()}</div><div><b style="font-size:15px;word-break:break-all">${f[0]}</b><div class="mut">Owner: ${f[4]}</div></div></div><pre class="inset" style="margin:12px 0 0;white-space:pre-wrap;word-break:break-word;font:inherit">${esc(f[1])}</pre><div class="dlb"><b id="dlb"></b></div>`;
-  $('#qq').innerHTML='Next: '+q.slice(0,3).map(z=>`<span>${z[0]}</span>`).join('')}
- function sort(b){if(over||!cur)return;const f=cur,c=f[2],bn=$('#sg .bin[data-b="'+b+'"]');
-  if(b==c){ok++;combo++;ctx.add(25+Math.min(combo-1,4)*5,combo>1?'combo x'+combo:'sorted');SFX.ok();say('<b class="mint">Correct.</b> '+f[3],'#10b981')}
-  else if(b>c){combo=0;mis.push([f,b]);ctx.add(-10,'too strict');SFX.bad();say('<b class="amb">Too strict.</b> This was '+BN[c][0]+'. '+f[3]+' Over-classifying slows the business down.','#ffb800')}
-  else{const d=c-b;combo=0;vault=Math.max(0,vault-10*d);mis.push([f,b]);ctx.add(-20*d,'data leak');SFX.bad();say('<b class="red">Data leak!</b> This was '+BN[c][0]+'. '+f[3],'#ef4444')}
-  hud();if(vault<=0)return end();nxt()}
- function late(){const f=cur;combo=0;vault=Math.max(0,vault-15);mis.push([f,-1]);ctx.add(-20,'too slow');SFX.bad();say('<b class="red">Too slow.</b> The file went out unsorted. It was '+BN[f[2]][0]+'.','#ef4444');hud();if(vault<=0)return end();nxt()}
- function end(){if(over)return;over=1;clearInterval(iv);document.removeEventListener('keydown',kd);const held=vault>0,bonus=held?Math.round(vault/2):0;if(bonus)ctx.add(bonus,'vault bonus');SFX[held?'win':'lose']();
-  const n=tot-(cur&&!over?0:0),acc=ok/Math.max(1,ok+mis.length),G=held&&acc>=.9?'S':acc>=.8?'A':acc>=.65?'B':acc>=.5?'C':'D';hud();$('#doc').style.display='none';
-  $('#sum').innerHTML=`<div class="panel" style="margin-top:16px"><div class="cart-h"><span class="lbl">Vault report</span><span class="chip"><i class="led ${held?'g':'r'}"></i>${held?'Vault held':'Vault breached'}</span></div><div style="display:flex;gap:20px;align-items:center;flex-wrap:wrap;margin-bottom:12px"><div class="big" style="font-size:64px;line-height:1">${G}</div><div><h3>${ok} sorted correctly</h3><div class="mut">${mis.length} mistakes. Vault at ${vault}%.</div></div></div>
-  ${mis.length?`<table><tr class="lbl"><th>File</th><th>You chose</th><th>Correct</th></tr>${mis.slice(0,8).map(m=>`<tr><td><b>${m[0][0]}</b><br><span class="mut">${m[0][3]}</span></td><td class="red">${m[1]<0?'Too slow':BN[m[1]][0]}</td><td class="mint">${BN[m[0][2]][0]}</td></tr>`).join('')}</table><br>`:'<p class="mint">No mistakes. Perfect sorting.</p>'}<button class="btn" id="fin5">Continue to quiz</button></div>`;$('#fin5').onclick=()=>ctx.done()}
- const kd=e=>{if(over)return;const m={'1':0,'2':1,'3':2,ArrowLeft:0,ArrowDown:1,ArrowRight:2};if(e.key in m){e.preventDefault();sort(m[e.key])}};
- $('#st0').onclick=()=>{$('#gb').style.display='none';$('#sg').style.display='block';q=shuf();nxt();hud();document.addEventListener('keydown',kd);
-  const dc=$('#doc');dc.onpointerdown=e=>{drag=1;sx=e.clientX;sy=e.clientY;try{dc.setPointerCapture(e.pointerId)}catch(x){}};
-  dc.onpointermove=e=>{if(drag)dc.style.transform=`translate(${e.clientX-sx}px,${e.clientY-sy}px) rotate(${(e.clientX-sx)/40}deg)`};
-  dc.onpointerup=e=>{if(!drag)return;drag=0;dc.style.transform='';dc.style.visibility='hidden';const u=document.elementFromPoint(e.clientX,e.clientY);dc.style.visibility='';const b=u&&u.closest('[data-b]');if(b)sort(+b.dataset.b)};
-  $('#sg').onclick=e=>{const b=e.target.closest('.bin');if(b)sort(+b.dataset.b)};
-  iv=setInterval(()=>{if(!$('#doc')){clearInterval(iv);document.removeEventListener('keydown',kd);return}t-=.05;dl-=.05;const d=$('#dlb');if(d){d.style.width=Math.max(0,dl/dmax*100)+'%';d.style.background=dl/dmax<.3?'#ef4444':'#ffb800'}
-   if(Math.abs(t-Math.round(t))<.03)hud();if(dl<=0)late();if(t<=0)end()},50)}}
+ const BN=[['Public','Approved for anyone','#48c5ed'],['Internal','Employees only','#d9aa5b'],['Confidential','Named people only','#ed9295']];
+ const T0=120,FILE_TIME=18,COUNT=9;
+ el.innerHTML=`<div class="sorter-intro" id="sorter-intro"><div class="sorter-kicker">LEVEL 01 · YOUR FIRST DESK SHIFT</div><h2>Every file has a place.</h2><p>You are at your Innovatiview desk. Nine documents have arrived. Read each one, then put it in the right tray before it leaves your desk.</p><div class="sorter-rules"><div class="sorter-rule"><b>01 / PUBLIC</b><small>Already approved for anyone to see, such as a published job advert.</small></div><div class="sorter-rule"><b>02 / INTERNAL</b><small>Useful to employees, but not intended for the public.</small></div><div class="sorter-rule"><b>03 / CONFIDENTIAL</b><small>Customer, financial, personnel, or secret business details.</small></div></div><button type="button" class="sorter-start" id="st0">TAKE YOUR SEAT →</button><small class="sorter-help">Tap a tray, drag the paper, or press 1, 2, or 3. You have two minutes. Feedback appears after every file.</small></div>
+ <div class="sorter-game" id="sg" style="display:none"><div class="sorter-hud"><div><small>INCOMING DESK FILES</small><b id="sorter-progress">01 / ${COUNT}</b></div><div><small>SHIFT CLOCK</small><b id="sorter-time">2:00</b></div><div><small>DATA SAFETY</small><b id="sorter-vault">100%</b></div><div><small>POINTS</small><b id="sorter-points">0</b></div></div><div class="sorter-room" aria-hidden="true"><div class="sorter-window"></div><div class="sorter-screen"></div><div class="sorter-screen-stand"></div><div class="sorter-lamp"></div><div class="sorter-mug"></div><div class="sorter-keyboard"></div><div class="sorter-inbox"><b>INCOMING</b><small id="sorter-queue">9 files</small></div></div><div class="sorter-worktop"><div class="sorter-paper" id="sorter-doc" tabindex="0" aria-label="Current file. Drag it to a tray or select a tray below."></div></div><div class="sorter-action"><p class="sorter-action-label">WHERE SHOULD THIS DOCUMENT GO?</p><div class="sorter-trays">${BN.map((b,i)=>`<button type="button" class="sorter-tray" data-b="${i}" style="--tray:${b[2]}" aria-label="Sort as ${b[0]}"><span class="sorter-tray-icon">0${i+1}</span><span class="sorter-tray-copy"><b>${b[0].toUpperCase()}</b><small>${b[1]}</small></span><span class="sorter-tray-key">${i+1}</span></button>`).join('')}</div><div class="sorter-feedback" id="sorter-msg" role="status">Read the document on your desk, then choose a tray.</div></div></div>`;
+ let queue=[],cur=null,t=T0,deadline=FILE_TIME,vault=100,combo=0,correct=0,seen=0,mistakes=[],clock=null,over=false,reviewing=false,drag=false,startX=0,startY=0;
+ const find=s=>el.querySelector(s);
+ const shuffle=items=>{const copy=items.slice();for(let i=copy.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[copy[i],copy[j]]=[copy[j],copy[i]]}return copy};
+ const minutes=s=>{const whole=Math.ceil(s);return `${Math.floor(whole/60)}:${String(whole%60).padStart(2,'0')}`};
+ function paintHud(){find('#sorter-time').textContent=minutes(t);find('#sorter-time').classList.toggle('low',t<=20);find('#sorter-vault').textContent=vault+'%';find('#sorter-vault').classList.toggle('low',vault<=40);find('#sorter-vault').classList.toggle('good',vault>40);find('#sorter-points').textContent=S.lp;const bar=find('#sorter-deadline');if(bar){bar.style.width=Math.max(0,deadline/FILE_TIME*100)+'%';bar.style.background=deadline<=5?'#e9797f':'#1ca4dd'}}
+ function showFile(){cur=queue.shift();seen++;deadline=FILE_TIME;reviewing=false;const extension=cur[0].split('.').pop().toUpperCase();find('#sorter-progress').textContent=String(seen).padStart(2,'0')+' / '+COUNT;find('#sorter-queue').textContent=queue.length+' waiting';find('#sorter-doc').className='sorter-paper';find('#sorter-doc').innerHTML=`<div class="sorter-paper-head"><span class="sorter-file-icon">${esc(extension)}</span><span class="sorter-file-meta"><b>${esc(cur[0])}</b><small>FROM: ${esc(cur[4])} · INCOMING</small></span></div><div class="sorter-paper-label">DOCUMENT PREVIEW</div><div class="sorter-preview">${esc(cur[1])}</div><div class="sorter-deadline" aria-label="Time left for this file"><b id="sorter-deadline"></b></div><div class="sorter-paper-footer"><span>READ BEFORE FILING</span><span>DRAG OR TAP A TRAY</span></div>`;find('#sorter-msg').className='sorter-feedback';find('#sorter-msg').textContent='Read the document on your desk, then choose a tray.';el.querySelectorAll('.sorter-tray').forEach(b=>b.disabled=false);paintHud()}
+ function feedback(title,explanation,tone){const box=find('#sorter-msg');box.className='sorter-feedback '+tone;box.innerHTML=`<span><b>${title}</b>${esc(explanation)}</span><button type="button" class="sorter-next" id="sorter-next">${queue.length&&vault>0&&t>0?'NEXT FILE →':'VIEW SHIFT REPORT →'}</button>`}
+ function classify(choice){if(over||reviewing||!cur)return;reviewing=true;const category=cur[2],file=cur;el.querySelectorAll('.sorter-tray').forEach(b=>b.disabled=true);
+  if(choice===category){correct++;combo++;ctx.add(25+Math.min(combo-1,4)*5,combo>1?'combo x'+combo:'sorted');SFX.ok();find('#sorter-doc').classList.add('resolved','review-good');feedback('Filed correctly · '+BN[category][0],file[3],'good')}
+  else if(choice<0){combo=0;vault=Math.max(0,vault-15);mistakes.push({file,choice});ctx.add(-20,'too slow');SFX.bad();find('#sorter-doc').classList.add('resolved','review-bad');feedback('Time ran out · '+BN[category][0],file[3],'warn')}
+  else if(choice>category){combo=0;mistakes.push({file,choice});ctx.add(-10,'too strict');SFX.bad();find('#sorter-doc').classList.add('resolved','review-bad');feedback('Too restrictive · '+BN[category][0],file[3]+' Keeping useful information too restricted slows work.','warn')}
+  else{combo=0;vault=Math.max(0,vault-10*(category-choice));mistakes.push({file,choice});ctx.add(-20*(category-choice),'data leak');SFX.bad();find('#sorter-doc').classList.add('resolved','review-bad');feedback('Data risk · '+BN[category][0],file[3]+' This needs a more protected tray.','bad')}
+  paintHud()}
+ function finish(){if(over)return;over=true;clearInterval(clock);document.removeEventListener('keydown',onKey);const held=vault>0,accuracy=correct/Math.max(1,correct+mistakes.length),grade=held&&accuracy>=.9?'S':accuracy>=.8?'A':accuracy>=.65?'B':accuracy>=.5?'C':'D';if(held)ctx.add(Math.round(vault/2),'data safety bonus');SFX[held?'win':'lose']();el.innerHTML=`<div class="sorter-report"><div class="sorter-kicker">DESK SHIFT COMPLETE</div><h2>Your filing report</h2><div class="sorter-report-grid"><div class="sorter-grade">${grade}</div><div><b>${correct} of ${seen} files sorted correctly</b><p>Data safety: ${vault}% · ${mistakes.length} to review. ${held?'You kept the desk secure.':'The desk needs more care next shift.'}</p></div></div>${mistakes.length?`<div class="sorter-review">${mistakes.slice(0,9).map(m=>`<article><b>${esc(m.file[0])}</b><span>${m.choice<0?'Not sorted':BN[m.choice][0]} → ${BN[m.file[2]][0]}</span><div>${esc(m.file[3])}</div></article>`).join('')}</div>`:'<p>Perfect filing. You recognized what should be shared and what must stay protected.</p>'}<button type="button" class="btn" id="fin5">CONTINUE TO KNOWLEDGE CHECK →</button></div>`;find('#fin5').onclick=()=>ctx.done()}
+ function next(){if(!reviewing)return;if(queue.length&&vault>0&&t>0)showFile();else finish()}
+ function onKey(event){if(over||!el.isConnected||event.target.closest('input,textarea,select'))return;const code=event.key;if(reviewing&&(code==='Enter'||code===' ')){event.preventDefault();next();return}const number=Number(code);if(!reviewing&&number>=1&&number<=3&&String(number)===code){event.preventDefault();classify(number-1)}}
+ find('#st0').onclick=()=>{find('#sorter-intro').remove();find('#sg').style.display='block';window.scrollTo(0,0);queue=shuffle([0,1,2].flatMap(category=>shuffle(FILES.filter(f=>f[2]===category)).slice(0,COUNT/3)));showFile();document.addEventListener('keydown',onKey);const paper=find('#sorter-doc');paper.onpointerdown=e=>{if(reviewing||over)return;drag=true;startX=e.clientX;startY=e.clientY;try{paper.setPointerCapture(e.pointerId)}catch(error){}};paper.onpointermove=e=>{if(drag)paper.style.transform=`translate(${e.clientX-startX}px,${e.clientY-startY}px) rotate(${(e.clientX-startX)/35-2}deg)`};paper.onpointerup=e=>{if(!drag)return;drag=false;paper.style.transform='';paper.style.visibility='hidden';const target=document.elementFromPoint(e.clientX,e.clientY);paper.style.visibility='';const tray=target&&target.closest('.sorter-tray');if(tray)classify(+tray.dataset.b)};find('#sg').onclick=e=>{const tray=e.target.closest('.sorter-tray');if(tray)classify(+tray.dataset.b);else if(e.target.closest('#sorter-next'))next()};clock=setInterval(()=>{if(!el.isConnected){clearInterval(clock);document.removeEventListener('keydown',onKey);return}if(over||reviewing)return;t=Math.max(0,t-.1);deadline=Math.max(0,deadline-.1);paintHud();if(t<=0)classify(-1);else if(deadline<=0)classify(-1)},100)};
+}
 /* ---------- rewards ---------- */
 const REW=[
 {id:'cafe',name:'Cafeteria coupon',req:1000,d:'One free meal at the office cafeteria.',i:'coupon'},
@@ -660,9 +796,9 @@ bottle:'<rect x="26" y="4" width="12" height="8" fill="#ffb800"/><rect x="28" y=
 mug:'<rect x="10" y="16" width="34" height="36" fill="#f8fafc"/><rect x="44" y="24" width="10" height="18" fill="none" stroke="#f8fafc" stroke-width="5"/><rect x="10" y="16" width="34" height="8" fill="#ffb800"/><text x="27" y="42" font-size="9" fill="#0b0c0e" text-anchor="middle" font-family="JetBrains Mono" font-weight="700">CQ</text>',
 tee:'<polygon points="14,12 24,8 32,14 40,8 50,12 60,24 52,30 48,26 48,56 16,56 16,26 12,30 4,24" fill="#10b981"/><text x="32" y="40" font-size="10" fill="#0b0c0e" text-anchor="middle" font-family="JetBrains Mono" font-weight="700">CQ</text>',
 gift:'<rect x="12" y="26" width="40" height="30" fill="#ef4444"/><rect x="29" y="26" width="6" height="30" fill="#ffb800"/><rect x="12" y="36" width="40" height="6" fill="#ffb800"/><rect x="22" y="16" width="20" height="10" fill="#ffb800"/>'};
-const allDone=()=>S.done.length==5;
+const allDone=()=>LV.every(l=>S.done.includes(l.n));
 function nextRew(){const nr=REW.slice().sort((a,b)=>a.req-b.req).find(r=>S.score<r.req);
- return `<div class="inset"><div class="lbl">Next reward</div><div class="big" style="font-size:16px;line-height:24px">${allDone()?(nr?nr.name:'All unlocked'):'Locked'}</div><div class="mut">${allDone()?(nr?fmt(nr.req-S.score)+' pts to go':'Claim them all'):S.done.length+'/5 levels cleared'}</div></div>`}
+ return `<div class="inset"><div class="lbl">Next reward</div><div class="big" style="font-size:16px;line-height:24px">${allDone()?(nr?nr.name:'All unlocked'):'Locked'}</div><div class="mut">${allDone()?(nr?fmt(nr.req-S.score)+' pts to go':'Claim them all'):S.done.length+'/'+LV.length+' levels cleared'}</div></div>`}
 function vAdmin(){const rows=[];CALLS.forEach((c,i)=>Object.keys(c.nodes).forEach(id=>rows.push({key:'c'+(i+1)+'-'+id,call:c.name,text:c.nodes[id].s.replace(/\[\[(.+?)\|.+?\]\]/g,'$1')})));
  $('#app').insertAdjacentHTML('beforeend',`<div class="panel" id="vx"><div class="cart-h"><span class="lbl">Voice recordings // Level 4</span><span class="chip"><i class="led"></i>Optional</span></div><p class="mut" style="max-width:70ch">Each caller line can play a pre-recorded voice. Lines without a recording use the built-in synthetic voice. ${SERVER?'Recordings are stored on the server and every player hears them straight away.':(STATIC?'Recordings made here are stored in this browser only. Use Download for each line, copy the files into public/audio/voice/ with the names shown, then redeploy.':'Recordings added here are stored in this browser only. To ship them to everyone, host the files with the names shown (for example c1-a.mp3) and set VOICE.base to their folder.')}</p>${rows.map(r=>`<div class="inset" style="margin-top:8px" data-k="${r.key}"><div style="display:flex;justify-content:space-between;gap:8px;flex-wrap:wrap"><span class="lbl">${r.call} // ${r.key}.mp3</span><span class="chip" data-st><i class="led"></i>Synthetic voice</span></div><p class="mut" style="margin:6px 0 8px">“${r.text}”</p><div style="display:flex;gap:6px;flex-wrap:wrap"><label class="btn sub" style="padding:6px 10px">Upload<input type="file" accept="audio/*" data-up hidden></label><button class="btn sub" data-vr style="padding:6px 10px">Record</button><button class="btn sub" data-vp style="padding:6px 10px">Play</button><button class="btn sub" data-vd style="padding:6px 10px">Remove</button>${SERVER?'':'<button class="btn sub" data-vx style="padding:6px 10px">Download</button>'}</div></div>`).join('')}</div>`);
  const root=$('#vx'),refresh=()=>VST.keys().then(ks=>root.querySelectorAll('[data-k]').forEach(r=>{const has=ks.includes(r.dataset.k);r.querySelector('[data-st]').innerHTML=`<i class="led ${has?'g':''}"></i>${has?'Recorded':'Synthetic voice'}`})).catch(()=>{});
@@ -676,23 +812,21 @@ function vAdmin(){const rows=[];CALLS.forEach((c,i)=>Object.keys(c.nodes).forEac
    try{const st=await navigator.mediaDevices.getUserMedia({audio:true}),m=new MediaRecorder(st),ch=[];vAdmin.m=m;b.textContent='Stop';m.ondataavailable=x=>ch.push(x.data);m.onstop=()=>{st.getTracks().forEach(t=>t.stop());vAdmin.m=null;b.textContent='Record';VST.put(k,new Blob(ch,{type:m.mimeType||'audio/webm'})).then(()=>{toast('Recording saved','#10b981');refresh()}).catch(x=>toast(x.message,'#ef4444'))};m.start()}catch(x){toast('Microphone not available here. Upload a file instead.','#ef4444')}}}}
 const _adm=V.admin;V.admin=function(){_adm();vAdmin()};
 /* ---------- server mode (used when the page is served by the CyberQuest backend) ---------- */
-function applyMe(me){S.user=me.user;S.name=me.user.mustChange?'':me.user.name;S.admin=me.user.role=='admin';S.best=me.best||{};S.done=me.cleared||[];S.cases=me.cases||{};S.claimed=me.claims||{};S.rank=me.rank;S.score=total()}
+function applyMe(me){S.user=me.user;S.photo=readServerPhoto(me.user.id);S.name=me.user.mustChange?'':me.user.name;S.admin=me.user.role=='admin';S.best=me.best||{};S.done=me.cleared||[];S.cases=me.cases||{};S.claimed=me.claims||{};S.rank=me.rank;S.score=total();try{S.basics=cleanBasics(JSON.parse(localStorage.getItem(basicsUserKey(me.user.id))||'null'))}catch(e){S.basics=cleanBasics(null)}}
 function applyCfg(cfg,vm){LV.forEach(l=>{const c=cfg.levels.find(x=>x.n==l.n);if(c)l.q=c.quiz.map(z=>[z.q,z.options,-1,''])});REW.length=0;cfg.rewards.forEach(r=>REW.push({id:r.id,name:r.name,req:r.req,d:r.d,i:r.i}));VOICE.man=vm||{}}
 async function boot(){
  load();
- if(!SERVER){if(STATIC)fetch('/audio/voice/manifest.json',{cache:'no-cache'}).then(r=>r.ok?r.json():{}).then(m=>{VOICE.man=m||{}}).catch(()=>{});S.score=total();render();return}
+ if(!SERVER){if(document.body.dataset.entry==='login')S.view='welcome';else if(!S.name){location.replace('/login');return}if(STATIC)fetch('/audio/voice/manifest.json',{cache:'no-cache'}).then(r=>r.ok?r.json():{}).then(m=>{VOICE.man=m||{}}).catch(()=>{});S.score=total();render();return}
  try{const me=await api('/me');applyMe(me);
   if(me.user.mustChange){S.view='pwd';render();return}
   const [cfg,vm]=await Promise.all([api('/config'),api('/voice')]);applyCfg(cfg,vm);
-  if(['login','pwd','welcome'].includes(S.view))S.view='dash';render()
+  if(document.body.dataset.entry==='login'){location.replace('/');return}
+  if(['login','pwd','welcome'].includes(S.view))S.view='games';render()
  }catch(e){if(e.status==401){S.user=null;S.name='';S.view='login';render()}else{S.view='login';render();const m=$('#lerr');if(m)m.textContent=e.message}}}
 const FIELD='width:100%;margin:6px 0 14px;padding:12px;background:#0b0c0e;color:#f8fafc;border:1px solid #323542;font:inherit';
-V.login=function(){const proxy=window.CQ_AUTH=='proxy';
- $('#app').innerHTML=`<div class="panel" style="max-width:520px;margin:40px auto"><div class="cart-h"><span class="lbl">Insert coin // Sign in</span><span class="chip"><i class="led"></i>Company login</span></div><h1>CyberQuest</h1>
- ${proxy?'<p class="mut">Your company sign-in is required. Please sign in through the company portal and reload this page.</p><div id="lerr" class="red" role="alert"></div><button class="btn" id="rl2">Reload</button>'
- :`<p class="mut">Sign in with your company email.</p><label class="lbl" for="em">Email</label><input id="em" type="email" autocomplete="username" style="${FIELD}"><label class="lbl" for="pw">Password</label><input id="pw" type="password" autocomplete="current-password" style="${FIELD}"><div id="lerr" class="red" role="alert" style="min-height:22px;margin-bottom:8px"></div><button class="btn" data-a="dologin">Sign in</button>`}</div>`;
- if(proxy){$('#rl2').onclick=()=>location.reload();return}
- $('#em').focus();$('#pw').onkeydown=e=>{if(e.key=='Enter')act.dologin()};$('#em').onkeydown=e=>{if(e.key=='Enter')$('#pw').focus()}};
+V.road=lobbyMissions;
+V.top=()=>{$('#app').innerHTML=leaderboardView(board().map((r,i)=>({rank:i+1,name:r[0],score:r[1],me:!!r[2]})),{sample:true})};
+V.login=lobbyLogin;
 V.pwd=function(){const must=S.user&&S.user.mustChange;
  $('#app').innerHTML=`<div class="panel" style="max-width:520px;margin:40px auto"><div class="cart-h"><span class="lbl">Account // Password</span><span class="chip"><i class="led ${must?'r':''}"></i>${must?'Change required':'Change password'}</span></div><h2>Choose a new password</h2><p class="mut">${must?'You must choose your own password before you continue.':'Pick a password only you know.'} Use at least 10 characters.</p>
  <label class="lbl" for="p0">Current password</label><input id="p0" type="password" autocomplete="current-password" style="${FIELD}"><label class="lbl" for="p1">New password</label><input id="p1" type="password" autocomplete="new-password" style="${FIELD}"><label class="lbl" for="p2">Repeat new password</label><input id="p2" type="password" autocomplete="new-password" style="${FIELD}">
@@ -701,8 +835,7 @@ if(SERVER){
  V.top=function(){$('#app').innerHTML='<div class="panel"><p class="mut">Loading…</p></div>';
   Promise.all([api('/leaderboard?scope=today&limit=25'),api('/leaderboard?scope=all&limit=25')]).then(([d,a])=>{if(S.view!='top')return;
    const m=d.rows.find(r=>r.me)||d.me;if(m){S.rank=m.rank;hdr()}
-   const tbl=x=>`<table><tr class="lbl"><th>#</th><th>Operator</th><th>Points</th></tr>${x.rows.map(r=>`<tr class="${r.me?'me2':''}"><td>${r.me?'&gt; ':''}${r.rank}</td><td>${esc(r.name)}${r.me?' (you)':''}</td><td>${fmt(r.score)}</td></tr>`).join('')}${x.me?`<tr class="me2"><td>&gt; ${x.me.rank}</td><td>${esc(x.me.name)} (you)</td><td>${fmt(x.me.score)}</td></tr>`:''}</table>`;
-   $('#app').innerHTML=`<div class="panel"><div class="cart-h"><span class="lbl">Daily high scores</span><span class="lbl">${d.total} players today</span></div>${d.rows.length?tbl(d):'<p class="mut">No scores yet today. Be the first!</p>'}</div><div class="panel"><div class="cart-h"><span class="lbl">All-time</span></div>${a.rows.length?tbl(a):'<p class="mut">No scores yet.</p>'}</div>`
+   $('#app').innerHTML=leaderboardView(d.rows,{title:'Today’s top defenders',me:d.me})+leaderboardView(a.rows,{title:'All-time legends',me:a.me});
   }).catch(e=>{$('#app').innerHTML=`<div class="panel"><p class="red">${esc(e.message)}</p></div>`})};
  V.admin=async function(){$('#app').innerHTML='<div class="panel"><p class="mut">Loading…</p></div>';
   try{const [st,rw,cl,fl,us]=await Promise.all([api('/admin/stats'),api('/admin/rewards'),api('/admin/claims'),api('/admin/attempts?flagged=1'),api('/admin/users')]);
@@ -721,11 +854,13 @@ if(SERVER){
    S.admMsg='';vAdmin()
   }catch(e){$('#app').innerHTML=`<div class="panel"><p class="red">${esc(e.message)}</p></div>`}};
 }
-V.welcome=function(){$('#app').innerHTML=`<div class="panel" style="max-width:560px;margin:40px auto"><div class="cart-h"><span class="lbl">Insert coin // Operator login</span><span class="chip"><i class="led"></i>New game</span></div><h1>CyberQuest</h1><p class="mut">Five levels of cyber awareness games. Enter your name to start. Your progress is saved on this device.</p><label class="lbl" for="nm">Your name</label><br><input id="nm" maxlength="40" autocomplete="name" value="${esc(S.name)}" style="width:100%;margin:6px 0 16px;padding:12px;background:#0b0c0e;color:#f8fafc;border:1px solid #323542;font:inherit"><button class="btn" data-a="setname">Start</button></div>`;$('#nm').focus();$('#nm').onkeydown=e=>{if(e.key=='Enter')act.setname()}};
+V.welcome=lobbyWelcome;
+V.basics=basicsView;
+V.profile=lobbyProfile;
 V.rew=function(){const all=allDone(),anyC=Object.keys(S.claimed).length;
  $('#app').innerHTML=`<div class="panel"><div class="cart-h"><span class="lbl">Rewards cabinet</span><span class="chip"><i class="led ${all?'g':'r'}"></i>${all?'Unlocked':'Locked'}</span></div>
- <h2>Earn real rewards</h2><p class="mut" style="max-width:64ch">Clear all 5 levels, then reach a reward's score to claim it. Wrong answers and false alarms lower your score, so play carefully.</p>
- <div class="grid" style="margin-top:14px"><div class="inset"><div class="lbl">Levels cleared</div><div class="big">${S.done.length} / 5</div><div class="seg">${LV.map(l=>`<b class="${S.done.includes(l.n)?'f':''}"></b>`).join('')}</div></div><div class="inset"><div class="lbl">Your score</div><div class="big">${fmt(S.score)}</div><div class="mut">${all?'Gate open':'Clear every level to open the gate'}</div></div></div></div>
+ <h2>Earn real rewards</h2><p class="mut" style="max-width:64ch">Clear all ${LV.length} levels, then reach a reward's score to claim it. Wrong answers and false alarms lower your score, so play carefully.</p>
+ <div class="grid" style="margin-top:14px"><div class="inset"><div class="lbl">Levels cleared</div><div class="big">${S.done.length} / ${LV.length}</div><div class="seg">${LV.map(l=>`<b class="${S.done.includes(l.n)?'f':''}"></b>`).join('')}</div></div><div class="inset"><div class="lbl">Your score</div><div class="big">${fmt(S.score)}</div><div class="mut">${all?'Gate open':'Clear every level to open the gate'}</div></div></div></div>
  <div class="grid" style="grid-template-columns:repeat(auto-fill,minmax(230px,1fr))">${REW.map((r,k)=>{const ok=all&&S.score>=r.req,c=S.claimed[r.id],p=Math.min(100,S.score/r.req*100);
   return `<div class="panel"><div class="cart-h"><span class="lbl">Reward-0${k+1}</span><span class="chip"><i class="led ${c?'g':ok?'':'r'}"></i>${c?'Claimed':ok?'Ready':'Locked'}</span></div>
   <div class="inset" style="display:grid;place-items:center;padding:14px"><svg viewBox="0 0 64 64" width="96" height="96" style="shape-rendering:crispEdges">${ICON[r.i]}</svg></div>
@@ -734,16 +869,18 @@ V.rew=function(){const all=allDone(),anyC=Object.keys(S.claimed).length;
   ${c?`<div class="inset mint" style="text-align:center;font-weight:700">CODE: ${c}</div>`:`<button class="btn" style="width:100%;box-sizing:border-box" data-a="claim" data-v="${r.id}" ${ok?'':'disabled'}>${ok?'Claim reward':all?fmt(r.req-S.score)+' pts to go':'Clear all levels'}</button>`}</div>`}).join('')}</div>
  ${anyC?'<p class="mut">Show your code at the HR desk with your employee ID to collect the reward.</p>':''}`};
 /* ---------- wiring ---------- */
-const act={nav:v=>{if(S.view=='play')S.score=total();VOICE.stop();SFX.duck(0);S.view=v;render()},fx:()=>{SFX.toggle('sfx');hdr()},mus:()=>{SFX.toggle('music');hdr()},setname:()=>{const v=$('#nm').value.replace(/\s+/g,' ').trim().slice(0,40);if(!v){toast('Please enter your name','#ef4444');return}S.name=v;S.view='dash';render()},rename:()=>{S.view='welcome';render()},resetme:()=>{if(!act._c){act._c=1;toast('Click again to confirm reset','#ffb800');setTimeout(()=>act._c=0,4000);return}act._c=0;S.best={};S.done=[];S.claimed={};S.cases={};S.score=0;S.sel=1;S.view='dash';render();toast('Progress reset','#10b981')},sel:v=>{S.sel=+v;render()},play:v=>play(+v),
+const act={nav:v=>{leaveFirewallScreen();if(S.view=='play')S.score=total();VOICE.stop();SFX.duck(0);S.menuOpen=false;if(v!=='road')S.lastResult=null;S.view=v;render()},dismissResult:()=>{S.lastResult=null;render()},menu:()=>{S.menuOpen=!S.menuOpen;const dock=$('#bottom-dock');dock.querySelector('#bottom-dock-panel').hidden=!S.menuOpen;dock.querySelector('.bottom-dock-toggle').setAttribute('aria-expanded',String(S.menuOpen));dock.querySelector('.bottom-dock-toggle').setAttribute('aria-label',S.menuOpen?'Close options menu':'Open options menu');dock.querySelector('.bottom-dock-toggle b').textContent=S.menuOpen?'×':'⌃'},fx:()=>{SFX.toggle('sfx');hdr()},mus:()=>{SFX.toggle('music');hdr()},setname:()=>{const v=$('#nm').value.replace(/\s+/g,' ').trim().slice(0,40);if(!v){toast('Please enter your name','#ef4444');return}const previous=S.name;S.name=v;S.view='games';if(document.body.dataset.entry==='login'){if(!save()){S.name=previous;S.view='welcome';toast('Your browser could not save the player profile. Please enable browser storage.','#ef4444');return}location.assign('/');return}render()},rename:()=>{S.view='welcome';render()},resetme:()=>{if(!act._c){act._c=1;toast('Click again to confirm reset','#ffb800');setTimeout(()=>act._c=0,4000);return}act._c=0;S.best={};S.done=[];S.claimed={};S.cases={};S.score=0;S.sel=1;S.view='dash';render();toast('Progress reset','#10b981')},sel:v=>{S.sel=+v;render()},play:v=>play(+v),quickplay:v=>play(+v,true),
  asg:(v,e)=>{S.assign[v]=e.value},reg:()=>{const n=$('#gn').value.trim();if(n){GAMES['g'+Date.now()]={title:n,mount:GAMES.stub.mount};render();toast('Game added','#10b981')}},
  unlock:()=>{S.done=[1,2,3,4];render()},reset:()=>{S.score=0;S.best={};S.done=[];S.sel=1;S.claimed={};S.cases={};render()},demo:()=>{S.done=[1,2,3,4,5];S.best={1:1600,2:800,3:700,4:250,5:250};S.score=total();render()},claim:v=>{const r=REW.find(x=>x.id==v);if(!r||S.claimed[v]||!allDone()||S.score<r.req)return;if(SERVER){api('/rewards/'+v+'/claim','POST').then(d=>{S.claimed[v]=d.code;SFX.win();render();toast('Reward claimed','#10b981')}).catch(e=>toast(e.message,'#ef4444'));return}S.claimed[v]='CQ-'+v.toUpperCase()+'-'+Math.random().toString(36).slice(2,6).toUpperCase();SFX.win();render();toast('Reward claimed','#10b981')}};
 Object.assign(act,{
+ profile:()=>act.nav('profile'),
+ entry:()=>location.assign('/login'),
  dologin:()=>{const em=$('#em').value.trim(),pw=$('#pw').value;if(!em||!pw){$('#lerr').textContent='Enter your email and password.';return}
   api('/auth/login','POST',{email:em,password:pw}).then(()=>boot()).catch(e=>{$('#lerr').textContent=e.message;SFX.bad()})},
  pwd:()=>{S.view='pwd';render()},
  dopwd:()=>{const c=$('#p0').value,n=$('#p1').value;if(n!==$('#p2').value){$('#perr').textContent='The new passwords do not match.';return}
-  api('/me/password','POST',{current:c,next:n}).then(()=>{toast('Password changed','#10b981');S.view='dash';boot()}).catch(e=>{$('#perr').textContent=e.message})},
- logout:()=>{api('/auth/logout','POST').catch(()=>{}).finally(()=>{S.user=null;S.admin=false;S.name='';S.best={};S.done=[];S.claimed={};S.cases={};S.score=0;S.view='login';render()})},
+  api('/me/password','POST',{current:c,next:n}).then(()=>{toast('Password changed','#10b981');S.view='games';boot()}).catch(e=>{$('#perr').textContent=e.message})},
+ logout:()=>{api('/auth/logout','POST').catch(()=>{}).finally(()=>{S.user=null;S.admin=false;S.name='';S.photo='';S.best={};S.done=[];S.claimed={};S.cases={};S.score=0;S.view='login';render()})},
  adm:async(v,el)=>{const tr=el.closest('tr'),done=m=>{S.admMsg=m||'';V.admin()},fail=e=>{S.admMsg=e.message;V.admin()};
   try{
    if(v=='rw'){const g=f=>tr.querySelector('[data-f='+f+']'),sv=g('stock').value.trim();await api('/admin/rewards/'+tr.dataset.id,'PUT',{req:+g('req').value,stock:sv===''?null:+sv,active:g('active').checked});done('Reward saved')}
@@ -754,11 +891,52 @@ Object.assign(act,{
    else if(v=='newuser'){const r=await api('/admin/users','POST',{email:$('#nu-e').value,name:$('#nu-n').value,role:$('#nu-r').value});done('Created '+r.email+'. Temporary password (shown once): '+r.tempPassword)}
   }catch(e){fail(e)}}});
 document.addEventListener('click',e=>{const a=e.target.closest('[data-a]');if(a&&a.tagName!='SELECT'&&act[a.dataset.a])act[a.dataset.a](a.dataset.v,a)});
+document.addEventListener('click',e=>{if(S.menuOpen&&!e.target.closest('#bottom-dock'))act.menu()});
+document.addEventListener('keydown',e=>{if(e.key==='Escape'&&S.menuOpen){act.menu();$('#bottom-dock .bottom-dock-toggle')?.focus()}});
 document.addEventListener('change',e=>{if(e.target.dataset.a=='asg')act.asg(e.target.dataset.v,e.target);if(e.target.dataset.a=='req'){const r=REW.find(x=>x.id==e.target.dataset.v);if(r&&+e.target.value>=0)r.req=+e.target.value}});
-function render(){if(SERVER){if(!S.user&&S.view!='pwd')S.view='login'}else if(!S.name)S.view='welcome';if(S.view=='admin'&&!ADMIN())S.view='dash';hdr();V[S.view]()}
+function render(){if(SERVER){if(!S.user&&S.view!='pwd')S.view='login'}else if(!S.name)S.view='welcome';if(S.view=='admin'&&!ADMIN())S.view='dash';if(S.name&&!basicsComplete()&&!['welcome','login','pwd','basics','admin'].includes(S.view))S.view='basics';hdr();V[S.view]();dailyPaint()}
 function crash(e){try{console.error(e)}catch(x){}$('#err').hidden=false}
 window.addEventListener('error',e=>crash(e.error||e.message));window.addEventListener('unhandledrejection',e=>crash(e.reason));
 $('#rl').onclick=()=>location.reload();
 document.addEventListener('keydown',e=>{if(e.ctrlKey&&e.altKey&&e.key.toLowerCase()=='a'){try{localStorage.setItem('cq-admin',localStorage.getItem('cq-admin')=='1'?'0':'1')}catch(x){}render()}});
+
+/* Daily playtime, paused whenever the game is not visible. The v2 key gives
+   players a fresh allowance after the earlier countdown became stuck. */
+const DAILY_PLAY_KEY='cyberquest.daily-play.v2',DAILY_PLAY_MS=15*60*1000;
+let dailyActive=false,dailyLast=Date.now(),dailyMemory=null;
+function dailyDate(now=new Date()){return now.getFullYear()+'-'+(now.getMonth()+1)+'-'+now.getDate()}
+function dailyRead(){
+ const day=dailyDate(),fresh={day,used:0,updated:Date.now()};
+ try{const raw=localStorage.getItem(DAILY_PLAY_KEY);if(raw){const saved=JSON.parse(raw);if(saved&&saved.day===day&&Number.isFinite(saved.used)&&saved.used>=0&&saved.used<=DAILY_PLAY_MS)return saved}}
+ catch(e){}
+ return dailyMemory&&dailyMemory.day===day?dailyMemory:fresh
+}
+function dailyWrite(record){dailyMemory=record;try{localStorage.setItem(DAILY_PLAY_KEY,JSON.stringify(record))}catch(e){}}
+function dailyRemaining(){return Math.max(0,DAILY_PLAY_MS-dailyRead().used)}
+function dailyText(){const secs=Math.ceil(dailyRemaining()/1000);return String(Math.floor(secs/60)).padStart(2,'0')+':'+String(secs%60).padStart(2,'0')}
+function dailyPaint(){
+ let badge=document.getElementById('daily-clock');if(!badge){badge=document.createElement('div');badge.id='daily-clock';badge.className='daily-clock';document.querySelector('header').appendChild(badge)}
+ badge.hidden=!S.name||['welcome','login','pwd','basics'].includes(S.view);badge.textContent='TODAY '+dailyText();badge.title='15 minutes of visible gameplay per day. Resets at local midnight.';
+ document.querySelectorAll('[data-daily-time]').forEach(e=>e.textContent=dailyText());
+ document.querySelectorAll('[data-a="play"],[data-a="quickplay"]').forEach(b=>{if(!dailyRemaining()){b.disabled=true;b.dataset.dailyLocked='1'}else if(b.dataset.dailyLocked){b.disabled=!open(+b.dataset.v);delete b.dataset.dailyLocked}})
+}
+function dailyAllow(){
+ if(dailyRemaining()>0)return true;
+ dailyActive=false;leaveFirewallScreen();VOICE.stop();SFX.duck(0);S.score=total();S.view='games';render();
+ const notice=document.createElement('div');notice.className='daily-expired';notice.setAttribute('role','alert');notice.innerHTML='<b>Your daily playtime is complete.</b><p>Your 15 minutes reset at local midnight. Your progress is saved.</p>';document.getElementById('app').prepend(notice);return false
+}
+function dailyTick(){
+ const now=Date.now();
+ if(dailyActive&&S.view==='play'&&!document.hidden){
+  const record=dailyRead();record.used=Math.min(DAILY_PLAY_MS,record.used+Math.max(0,now-Math.max(dailyLast,Number(record.updated)||dailyLast)));record.updated=now;dailyWrite(record);
+  if(record.used>=DAILY_PLAY_MS)dailyAllow()
+ }
+ dailyLast=now;dailyPaint()
+}
+setInterval(dailyTick,250);
+window.addEventListener('pagehide',dailyTick);
+document.addEventListener('visibilitychange',()=>{dailyLast=Date.now();dailyPaint()});
+window.addEventListener('storage',e=>{if(e.key===DAILY_PLAY_KEY){dailyPaint();if(dailyActive&&!dailyRemaining())dailyAllow()}});
+
 boot();
 </script></body></html>
